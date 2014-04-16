@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA1FBC4918FEC5CA008EBF0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC4818FEC5CA008EBF0E /* Foundation.framework */; };
+		BA1FBC4B18FEC5CA008EBF0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC4A18FEC5CA008EBF0E /* CoreGraphics.framework */; };
+		BA1FBC4D18FEC5CA008EBF0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC4C18FEC5CA008EBF0E /* UIKit.framework */; };
+		BA1FBC5318FEC5CA008EBF0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA1FBC5118FEC5CA008EBF0E /* InfoPlist.strings */; };
+		BA1FBC5518FEC5CA008EBF0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC5418FEC5CA008EBF0E /* main.m */; };
+		BA1FBC5918FEC5CA008EBF0E /* HBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC5818FEC5CA008EBF0E /* HBAppDelegate.m */; };
+		BA1FBC5C18FEC5CA008EBF0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1FBC5A18FEC5CA008EBF0E /* Main.storyboard */; };
+		BA1FBC5F18FEC5CA008EBF0E /* HBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC5E18FEC5CA008EBF0E /* HBViewController.m */; };
+		BA1FBC6118FEC5CA008EBF0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1FBC6018FEC5CA008EBF0E /* Images.xcassets */; };
+		BA1FBC6818FEC5CA008EBF0E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC6718FEC5CA008EBF0E /* XCTest.framework */; };
+		BA1FBC6918FEC5CA008EBF0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC4818FEC5CA008EBF0E /* Foundation.framework */; };
+		BA1FBC6A18FEC5CA008EBF0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC4C18FEC5CA008EBF0E /* UIKit.framework */; };
+		BA1FBC7218FEC5CA008EBF0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA1FBC7018FEC5CA008EBF0E /* InfoPlist.strings */; };
+		BA1FBC7418FEC5CA008EBF0E /* FluddTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC7318FEC5CA008EBF0E /* FluddTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA1FBC6B18FEC5CA008EBF0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA1FBC3D18FEC5CA008EBF0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA1FBC4418FEC5CA008EBF0E;
+			remoteInfo = Fludd;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BA1FBC4518FEC5CA008EBF0E /* Fludd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fludd.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1FBC4818FEC5CA008EBF0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BA1FBC4A18FEC5CA008EBF0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BA1FBC4C18FEC5CA008EBF0E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BA1FBC5018FEC5CA008EBF0E /* Fludd-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Fludd-Info.plist"; sourceTree = "<group>"; };
+		BA1FBC5218FEC5CA008EBF0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BA1FBC5418FEC5CA008EBF0E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BA1FBC5618FEC5CA008EBF0E /* Fludd-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fludd-Prefix.pch"; sourceTree = "<group>"; };
+		BA1FBC5718FEC5CA008EBF0E /* HBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBAppDelegate.h; sourceTree = "<group>"; };
+		BA1FBC5818FEC5CA008EBF0E /* HBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBAppDelegate.m; sourceTree = "<group>"; };
+		BA1FBC5B18FEC5CA008EBF0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA1FBC5D18FEC5CA008EBF0E /* HBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBViewController.h; sourceTree = "<group>"; };
+		BA1FBC5E18FEC5CA008EBF0E /* HBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBViewController.m; sourceTree = "<group>"; };
+		BA1FBC6018FEC5CA008EBF0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BA1FBC6618FEC5CA008EBF0E /* FluddTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluddTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA1FBC6718FEC5CA008EBF0E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BA1FBC6F18FEC5CA008EBF0E /* FluddTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FluddTests-Info.plist"; sourceTree = "<group>"; };
+		BA1FBC7118FEC5CA008EBF0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BA1FBC7318FEC5CA008EBF0E /* FluddTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FluddTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA1FBC4218FEC5CA008EBF0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA1FBC4B18FEC5CA008EBF0E /* CoreGraphics.framework in Frameworks */,
+				BA1FBC4D18FEC5CA008EBF0E /* UIKit.framework in Frameworks */,
+				BA1FBC4918FEC5CA008EBF0E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA1FBC6318FEC5CA008EBF0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA1FBC6818FEC5CA008EBF0E /* XCTest.framework in Frameworks */,
+				BA1FBC6A18FEC5CA008EBF0E /* UIKit.framework in Frameworks */,
+				BA1FBC6918FEC5CA008EBF0E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA1FBC3C18FEC5CA008EBF0E = {
+			isa = PBXGroup;
+			children = (
+				BA1FBC4E18FEC5CA008EBF0E /* Fludd */,
+				BA1FBC6D18FEC5CA008EBF0E /* FluddTests */,
+				BA1FBC4718FEC5CA008EBF0E /* Frameworks */,
+				BA1FBC4618FEC5CA008EBF0E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BA1FBC4618FEC5CA008EBF0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA1FBC4518FEC5CA008EBF0E /* Fludd.app */,
+				BA1FBC6618FEC5CA008EBF0E /* FluddTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA1FBC4718FEC5CA008EBF0E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA1FBC4818FEC5CA008EBF0E /* Foundation.framework */,
+				BA1FBC4A18FEC5CA008EBF0E /* CoreGraphics.framework */,
+				BA1FBC4C18FEC5CA008EBF0E /* UIKit.framework */,
+				BA1FBC6718FEC5CA008EBF0E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA1FBC4E18FEC5CA008EBF0E /* Fludd */ = {
+			isa = PBXGroup;
+			children = (
+				BA1FBC5718FEC5CA008EBF0E /* HBAppDelegate.h */,
+				BA1FBC5818FEC5CA008EBF0E /* HBAppDelegate.m */,
+				BA1FBC5A18FEC5CA008EBF0E /* Main.storyboard */,
+				BA1FBC5D18FEC5CA008EBF0E /* HBViewController.h */,
+				BA1FBC5E18FEC5CA008EBF0E /* HBViewController.m */,
+				BA1FBC6018FEC5CA008EBF0E /* Images.xcassets */,
+				BA1FBC4F18FEC5CA008EBF0E /* Supporting Files */,
+			);
+			path = Fludd;
+			sourceTree = "<group>";
+		};
+		BA1FBC4F18FEC5CA008EBF0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BA1FBC5018FEC5CA008EBF0E /* Fludd-Info.plist */,
+				BA1FBC5118FEC5CA008EBF0E /* InfoPlist.strings */,
+				BA1FBC5418FEC5CA008EBF0E /* main.m */,
+				BA1FBC5618FEC5CA008EBF0E /* Fludd-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BA1FBC6D18FEC5CA008EBF0E /* FluddTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA1FBC7318FEC5CA008EBF0E /* FluddTests.m */,
+				BA1FBC6E18FEC5CA008EBF0E /* Supporting Files */,
+			);
+			path = FluddTests;
+			sourceTree = "<group>";
+		};
+		BA1FBC6E18FEC5CA008EBF0E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BA1FBC6F18FEC5CA008EBF0E /* FluddTests-Info.plist */,
+				BA1FBC7018FEC5CA008EBF0E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA1FBC4418FEC5CA008EBF0E /* Fludd */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA1FBC7718FEC5CB008EBF0E /* Build configuration list for PBXNativeTarget "Fludd" */;
+			buildPhases = (
+				BA1FBC4118FEC5CA008EBF0E /* Sources */,
+				BA1FBC4218FEC5CA008EBF0E /* Frameworks */,
+				BA1FBC4318FEC5CA008EBF0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fludd;
+			productName = Fludd;
+			productReference = BA1FBC4518FEC5CA008EBF0E /* Fludd.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BA1FBC6518FEC5CA008EBF0E /* FluddTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA1FBC7A18FEC5CB008EBF0E /* Build configuration list for PBXNativeTarget "FluddTests" */;
+			buildPhases = (
+				BA1FBC6218FEC5CA008EBF0E /* Sources */,
+				BA1FBC6318FEC5CA008EBF0E /* Frameworks */,
+				BA1FBC6418FEC5CA008EBF0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA1FBC6C18FEC5CA008EBF0E /* PBXTargetDependency */,
+			);
+			name = FluddTests;
+			productName = FluddTests;
+			productReference = BA1FBC6618FEC5CA008EBF0E /* FluddTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA1FBC3D18FEC5CA008EBF0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Henry Bourne";
+				TargetAttributes = {
+					BA1FBC6518FEC5CA008EBF0E = {
+						TestTargetID = BA1FBC4418FEC5CA008EBF0E;
+					};
+				};
+			};
+			buildConfigurationList = BA1FBC4018FEC5CA008EBF0E /* Build configuration list for PBXProject "Fludd" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA1FBC3C18FEC5CA008EBF0E;
+			productRefGroup = BA1FBC4618FEC5CA008EBF0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA1FBC4418FEC5CA008EBF0E /* Fludd */,
+				BA1FBC6518FEC5CA008EBF0E /* FluddTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA1FBC4318FEC5CA008EBF0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA1FBC6118FEC5CA008EBF0E /* Images.xcassets in Resources */,
+				BA1FBC5318FEC5CA008EBF0E /* InfoPlist.strings in Resources */,
+				BA1FBC5C18FEC5CA008EBF0E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA1FBC6418FEC5CA008EBF0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA1FBC7218FEC5CA008EBF0E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA1FBC4118FEC5CA008EBF0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA1FBC5F18FEC5CA008EBF0E /* HBViewController.m in Sources */,
+				BA1FBC5918FEC5CA008EBF0E /* HBAppDelegate.m in Sources */,
+				BA1FBC5518FEC5CA008EBF0E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA1FBC6218FEC5CA008EBF0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA1FBC7418FEC5CA008EBF0E /* FluddTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA1FBC6C18FEC5CA008EBF0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA1FBC4418FEC5CA008EBF0E /* Fludd */;
+			targetProxy = BA1FBC6B18FEC5CA008EBF0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BA1FBC5118FEC5CA008EBF0E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA1FBC5218FEC5CA008EBF0E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BA1FBC5A18FEC5CA008EBF0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA1FBC5B18FEC5CA008EBF0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BA1FBC7018FEC5CA008EBF0E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA1FBC7118FEC5CA008EBF0E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA1FBC7518FEC5CB008EBF0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BA1FBC7618FEC5CB008EBF0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA1FBC7818FEC5CB008EBF0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fludd/Fludd-Prefix.pch";
+				INFOPLIST_FILE = "Fludd/Fludd-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BA1FBC7918FEC5CB008EBF0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fludd/Fludd-Prefix.pch";
+				INFOPLIST_FILE = "Fludd/Fludd-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BA1FBC7B18FEC5CB008EBF0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Fludd.app/Fludd";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fludd/Fludd-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FluddTests/FluddTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BA1FBC7C18FEC5CB008EBF0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Fludd.app/Fludd";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fludd/Fludd-Prefix.pch";
+				INFOPLIST_FILE = "FluddTests/FluddTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA1FBC4018FEC5CA008EBF0E /* Build configuration list for PBXProject "Fludd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA1FBC7518FEC5CB008EBF0E /* Debug */,
+				BA1FBC7618FEC5CB008EBF0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA1FBC7718FEC5CB008EBF0E /* Build configuration list for PBXNativeTarget "Fludd" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA1FBC7818FEC5CB008EBF0E /* Debug */,
+				BA1FBC7918FEC5CB008EBF0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BA1FBC7A18FEC5CB008EBF0E /* Build configuration list for PBXNativeTarget "FluddTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA1FBC7B18FEC5CB008EBF0E /* Debug */,
+				BA1FBC7C18FEC5CB008EBF0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA1FBC3D18FEC5CA008EBF0E /* Project object */;
+}
