@@ -13,14 +13,25 @@
 		BA1FBC5318FEC5CA008EBF0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA1FBC5118FEC5CA008EBF0E /* InfoPlist.strings */; };
 		BA1FBC5518FEC5CA008EBF0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC5418FEC5CA008EBF0E /* main.m */; };
 		BA1FBC5918FEC5CA008EBF0E /* HBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC5818FEC5CA008EBF0E /* HBAppDelegate.m */; };
-		BA1FBC5C18FEC5CA008EBF0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1FBC5A18FEC5CA008EBF0E /* Main.storyboard */; };
-		BA1FBC5F18FEC5CA008EBF0E /* HBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC5E18FEC5CA008EBF0E /* HBViewController.m */; };
+		BA1FBC5C18FEC5CA008EBF0E /* Fludd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1FBC5A18FEC5CA008EBF0E /* Fludd.storyboard */; };
+		BA1FBC5F18FEC5CA008EBF0E /* HBFluddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC5E18FEC5CA008EBF0E /* HBFluddViewController.m */; };
 		BA1FBC6118FEC5CA008EBF0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1FBC6018FEC5CA008EBF0E /* Images.xcassets */; };
 		BA1FBC6818FEC5CA008EBF0E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC6718FEC5CA008EBF0E /* XCTest.framework */; };
 		BA1FBC6918FEC5CA008EBF0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC4818FEC5CA008EBF0E /* Foundation.framework */; };
 		BA1FBC6A18FEC5CA008EBF0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC4C18FEC5CA008EBF0E /* UIKit.framework */; };
 		BA1FBC7218FEC5CA008EBF0E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA1FBC7018FEC5CA008EBF0E /* InfoPlist.strings */; };
 		BA1FBC7418FEC5CA008EBF0E /* FluddTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC7318FEC5CA008EBF0E /* FluddTests.m */; };
+		BA1FBC7F18FEC859008EBF0E /* HBFluddSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC7E18FEC859008EBF0E /* HBFluddSquare.m */; };
+		BA1FBC8218FEC93B008EBF0E /* HBFluddGame.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC8118FEC93B008EBF0E /* HBFluddGame.m */; };
+		BA1FBC8518FEC9AE008EBF0E /* HBFluddColors.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC8418FEC9AE008EBF0E /* HBFluddColors.m */; };
+		BA1FBC8818FECF52008EBF0E /* HBFluddBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC8718FECF52008EBF0E /* HBFluddBoardView.m */; };
+		BA533A0F19004A5100B0482D /* HBFluddColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA533A0E19004A5100B0482D /* HBFluddColorButton.m */; };
+		BAC4CCA01905B5AB0088890E /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC4CC9C1905B5AB0088890E /* plus.png */; };
+		BAC4CCA11905B5AB0088890E /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC4CC9D1905B5AB0088890E /* plus@2x.png */; };
+		BAC4CCA21905B5AB0088890E /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC4CC9E1905B5AB0088890E /* settings.png */; };
+		BAC4CCA31905B5AB0088890E /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC4CC9F1905B5AB0088890E /* settings@2x.png */; };
+		BADE6AB619068F5300FEA953 /* HBFloodColorsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BADE6AB519068F5300FEA953 /* HBFloodColorsTest.m */; };
+		BADE6ABB1906CBAA00FEA953 /* HBFluddBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = BADE6ABA1906CBAA00FEA953 /* HBFluddBoard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,15 +55,32 @@
 		BA1FBC5618FEC5CA008EBF0E /* Fludd-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fludd-Prefix.pch"; sourceTree = "<group>"; };
 		BA1FBC5718FEC5CA008EBF0E /* HBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBAppDelegate.h; sourceTree = "<group>"; };
 		BA1FBC5818FEC5CA008EBF0E /* HBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBAppDelegate.m; sourceTree = "<group>"; };
-		BA1FBC5B18FEC5CA008EBF0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BA1FBC5D18FEC5CA008EBF0E /* HBViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBViewController.h; sourceTree = "<group>"; };
-		BA1FBC5E18FEC5CA008EBF0E /* HBViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBViewController.m; sourceTree = "<group>"; };
+		BA1FBC5B18FEC5CA008EBF0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Fludd.storyboard; sourceTree = "<group>"; };
+		BA1FBC5D18FEC5CA008EBF0E /* HBFluddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBFluddViewController.h; sourceTree = "<group>"; };
+		BA1FBC5E18FEC5CA008EBF0E /* HBFluddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBFluddViewController.m; sourceTree = "<group>"; };
 		BA1FBC6018FEC5CA008EBF0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BA1FBC6618FEC5CA008EBF0E /* FluddTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluddTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1FBC6718FEC5CA008EBF0E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		BA1FBC6F18FEC5CA008EBF0E /* FluddTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FluddTests-Info.plist"; sourceTree = "<group>"; };
 		BA1FBC7118FEC5CA008EBF0E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BA1FBC7318FEC5CA008EBF0E /* FluddTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FluddTests.m; sourceTree = "<group>"; };
+		BA1FBC7D18FEC859008EBF0E /* HBFluddSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddSquare.h; sourceTree = "<group>"; };
+		BA1FBC7E18FEC859008EBF0E /* HBFluddSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddSquare.m; sourceTree = "<group>"; };
+		BA1FBC8018FEC93B008EBF0E /* HBFluddGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddGame.h; sourceTree = "<group>"; };
+		BA1FBC8118FEC93B008EBF0E /* HBFluddGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddGame.m; sourceTree = "<group>"; };
+		BA1FBC8318FEC9AE008EBF0E /* HBFluddColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddColors.h; sourceTree = "<group>"; };
+		BA1FBC8418FEC9AE008EBF0E /* HBFluddColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddColors.m; sourceTree = "<group>"; };
+		BA1FBC8618FECF52008EBF0E /* HBFluddBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddBoardView.h; sourceTree = "<group>"; };
+		BA1FBC8718FECF52008EBF0E /* HBFluddBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddBoardView.m; sourceTree = "<group>"; };
+		BA533A0D19004A5100B0482D /* HBFluddColorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddColorButton.h; sourceTree = "<group>"; };
+		BA533A0E19004A5100B0482D /* HBFluddColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddColorButton.m; sourceTree = "<group>"; };
+		BAC4CC9C1905B5AB0088890E /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		BAC4CC9D1905B5AB0088890E /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
+		BAC4CC9E1905B5AB0088890E /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		BAC4CC9F1905B5AB0088890E /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
+		BADE6AB519068F5300FEA953 /* HBFloodColorsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFloodColorsTest.m; sourceTree = "<group>"; };
+		BADE6AB91906CBAA00FEA953 /* HBFluddBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddBoard.h; sourceTree = "<group>"; };
+		BADE6ABA1906CBAA00FEA953 /* HBFluddBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddBoard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +140,27 @@
 		BA1FBC4E18FEC5CA008EBF0E /* Fludd */ = {
 			isa = PBXGroup;
 			children = (
+				BAC4CC9C1905B5AB0088890E /* plus.png */,
+				BAC4CC9D1905B5AB0088890E /* plus@2x.png */,
+				BAC4CC9E1905B5AB0088890E /* settings.png */,
+				BAC4CC9F1905B5AB0088890E /* settings@2x.png */,
 				BA1FBC5718FEC5CA008EBF0E /* HBAppDelegate.h */,
 				BA1FBC5818FEC5CA008EBF0E /* HBAppDelegate.m */,
-				BA1FBC5A18FEC5CA008EBF0E /* Main.storyboard */,
-				BA1FBC5D18FEC5CA008EBF0E /* HBViewController.h */,
-				BA1FBC5E18FEC5CA008EBF0E /* HBViewController.m */,
+				BA1FBC5A18FEC5CA008EBF0E /* Fludd.storyboard */,
+				BA1FBC5D18FEC5CA008EBF0E /* HBFluddViewController.h */,
+				BA1FBC5E18FEC5CA008EBF0E /* HBFluddViewController.m */,
+				BADE6AB91906CBAA00FEA953 /* HBFluddBoard.h */,
+				BADE6ABA1906CBAA00FEA953 /* HBFluddBoard.m */,
+				BA1FBC8618FECF52008EBF0E /* HBFluddBoardView.h */,
+				BA1FBC8718FECF52008EBF0E /* HBFluddBoardView.m */,
+				BA533A0D19004A5100B0482D /* HBFluddColorButton.h */,
+				BA533A0E19004A5100B0482D /* HBFluddColorButton.m */,
+				BA1FBC8318FEC9AE008EBF0E /* HBFluddColors.h */,
+				BA1FBC8418FEC9AE008EBF0E /* HBFluddColors.m */,
+				BA1FBC8018FEC93B008EBF0E /* HBFluddGame.h */,
+				BA1FBC8118FEC93B008EBF0E /* HBFluddGame.m */,
+				BA1FBC7D18FEC859008EBF0E /* HBFluddSquare.h */,
+				BA1FBC7E18FEC859008EBF0E /* HBFluddSquare.m */,
 				BA1FBC6018FEC5CA008EBF0E /* Images.xcassets */,
 				BA1FBC4F18FEC5CA008EBF0E /* Supporting Files */,
 			);
@@ -139,6 +183,7 @@
 			children = (
 				BA1FBC7318FEC5CA008EBF0E /* FluddTests.m */,
 				BA1FBC6E18FEC5CA008EBF0E /* Supporting Files */,
+				BADE6AB519068F5300FEA953 /* HBFloodColorsTest.m */,
 			);
 			path = FluddTests;
 			sourceTree = "<group>";
@@ -229,9 +274,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC4CCA21905B5AB0088890E /* settings.png in Resources */,
 				BA1FBC6118FEC5CA008EBF0E /* Images.xcassets in Resources */,
+				BAC4CCA31905B5AB0088890E /* settings@2x.png in Resources */,
+				BAC4CCA11905B5AB0088890E /* plus@2x.png in Resources */,
 				BA1FBC5318FEC5CA008EBF0E /* InfoPlist.strings in Resources */,
-				BA1FBC5C18FEC5CA008EBF0E /* Main.storyboard in Resources */,
+				BA1FBC5C18FEC5CA008EBF0E /* Fludd.storyboard in Resources */,
+				BAC4CCA01905B5AB0088890E /* plus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +299,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA1FBC5F18FEC5CA008EBF0E /* HBViewController.m in Sources */,
+				BADE6ABB1906CBAA00FEA953 /* HBFluddBoard.m in Sources */,
+				BA1FBC8218FEC93B008EBF0E /* HBFluddGame.m in Sources */,
+				BA1FBC7F18FEC859008EBF0E /* HBFluddSquare.m in Sources */,
+				BA1FBC8818FECF52008EBF0E /* HBFluddBoardView.m in Sources */,
+				BA1FBC5F18FEC5CA008EBF0E /* HBFluddViewController.m in Sources */,
 				BA1FBC5918FEC5CA008EBF0E /* HBAppDelegate.m in Sources */,
 				BA1FBC5518FEC5CA008EBF0E /* main.m in Sources */,
+				BA533A0F19004A5100B0482D /* HBFluddColorButton.m in Sources */,
+				BA1FBC8518FEC9AE008EBF0E /* HBFluddColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BADE6AB619068F5300FEA953 /* HBFloodColorsTest.m in Sources */,
 				BA1FBC7418FEC5CA008EBF0E /* FluddTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,12 +339,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		BA1FBC5A18FEC5CA008EBF0E /* Main.storyboard */ = {
+		BA1FBC5A18FEC5CA008EBF0E /* Fludd.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				BA1FBC5B18FEC5CA008EBF0E /* Base */,
 			);
-			name = Main.storyboard;
+			name = Fludd.storyboard;
 			sourceTree = "<group>";
 		};
 		BA1FBC7018FEC5CA008EBF0E /* InfoPlist.strings */ = {
@@ -457,6 +513,7 @@
 				BA1FBC7918FEC5CB008EBF0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA1FBC7A18FEC5CB008EBF0E /* Build configuration list for PBXNativeTarget "FluddTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +522,7 @@
 				BA1FBC7C18FEC5CB008EBF0E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
