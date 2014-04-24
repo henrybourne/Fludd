@@ -26,7 +26,7 @@
 		BA1FBC7F18FEC859008EBF0E /* HBFluddCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC7E18FEC859008EBF0E /* HBFluddCellView.m */; };
 		BA1FBC8218FEC93B008EBF0E /* HBFluddGame.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC8118FEC93B008EBF0E /* HBFluddGame.m */; };
 		BA1FBC8518FEC9AE008EBF0E /* HBFluddColors.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC8418FEC9AE008EBF0E /* HBFluddColors.m */; };
-		BA1FBC8818FECF52008EBF0E /* HBFluddBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC8718FECF52008EBF0E /* HBFluddBoardView.m */; };
+		BA1FBC8818FECF52008EBF0E /* HBFluddGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC8718FECF52008EBF0E /* HBFluddGameView.m */; };
 		BA3804701906D5B800B3EB5B /* HBFluddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA38046F1906D5B800B3EB5B /* HBFluddCell.m */; };
 		BA533A0F19004A5100B0482D /* HBFluddColorButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA533A0E19004A5100B0482D /* HBFluddColorButtonView.m */; };
 		BAC4CCA01905B5AB0088890E /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC4CC9C1905B5AB0088890E /* plus.png */; };
@@ -34,7 +34,6 @@
 		BAC4CCA21905B5AB0088890E /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC4CC9E1905B5AB0088890E /* settings.png */; };
 		BAC4CCA31905B5AB0088890E /* settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC4CC9F1905B5AB0088890E /* settings@2x.png */; };
 		BADE6AB619068F5300FEA953 /* HBFloodColorsTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BADE6AB519068F5300FEA953 /* HBFloodColorsTest.m */; };
-		BADE6ABB1906CBAA00FEA953 /* HBFluddBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = BADE6ABA1906CBAA00FEA953 /* HBFluddBoard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +76,8 @@
 		BA1FBC8118FEC93B008EBF0E /* HBFluddGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddGame.m; sourceTree = "<group>"; };
 		BA1FBC8318FEC9AE008EBF0E /* HBFluddColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddColors.h; sourceTree = "<group>"; };
 		BA1FBC8418FEC9AE008EBF0E /* HBFluddColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddColors.m; sourceTree = "<group>"; };
-		BA1FBC8618FECF52008EBF0E /* HBFluddBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddBoardView.h; sourceTree = "<group>"; };
-		BA1FBC8718FECF52008EBF0E /* HBFluddBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddBoardView.m; sourceTree = "<group>"; };
+		BA1FBC8618FECF52008EBF0E /* HBFluddGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddGameView.h; sourceTree = "<group>"; };
+		BA1FBC8718FECF52008EBF0E /* HBFluddGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddGameView.m; sourceTree = "<group>"; };
 		BA38046E1906D5B800B3EB5B /* HBFluddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddCell.h; sourceTree = "<group>"; };
 		BA38046F1906D5B800B3EB5B /* HBFluddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddCell.m; sourceTree = "<group>"; };
 		BA533A0D19004A5100B0482D /* HBFluddColorButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddColorButtonView.h; sourceTree = "<group>"; };
@@ -88,8 +87,6 @@
 		BAC4CC9E1905B5AB0088890E /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		BAC4CC9F1905B5AB0088890E /* settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings@2x.png"; sourceTree = "<group>"; };
 		BADE6AB519068F5300FEA953 /* HBFloodColorsTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFloodColorsTest.m; sourceTree = "<group>"; };
-		BADE6AB91906CBAA00FEA953 /* HBFluddBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddBoard.h; sourceTree = "<group>"; };
-		BADE6ABA1906CBAA00FEA953 /* HBFluddBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddBoard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,10 +116,6 @@
 		BA0F3B3119092C8C00E4C8C2 /* Game */ = {
 			isa = PBXGroup;
 			children = (
-				BADE6AB91906CBAA00FEA953 /* HBFluddBoard.h */,
-				BADE6ABA1906CBAA00FEA953 /* HBFluddBoard.m */,
-				BA1FBC8618FECF52008EBF0E /* HBFluddBoardView.h */,
-				BA1FBC8718FECF52008EBF0E /* HBFluddBoardView.m */,
 				BA38046E1906D5B800B3EB5B /* HBFluddCell.h */,
 				BA38046F1906D5B800B3EB5B /* HBFluddCell.m */,
 				BA1FBC7D18FEC859008EBF0E /* HBFluddCellView.h */,
@@ -135,6 +128,8 @@
 				BA1FBC8418FEC9AE008EBF0E /* HBFluddColors.m */,
 				BA1FBC8018FEC93B008EBF0E /* HBFluddGame.h */,
 				BA1FBC8118FEC93B008EBF0E /* HBFluddGame.m */,
+				BA1FBC8618FECF52008EBF0E /* HBFluddGameView.h */,
+				BA1FBC8718FECF52008EBF0E /* HBFluddGameView.m */,
 				BA0F3B2E19092C6F00E4C8C2 /* HBFluddMovesRemainingView.h */,
 				BA0F3B2F19092C6F00E4C8C2 /* HBFluddMovesRemainingView.m */,
 			);
@@ -333,10 +328,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BADE6ABB1906CBAA00FEA953 /* HBFluddBoard.m in Sources */,
 				BA1FBC8218FEC93B008EBF0E /* HBFluddGame.m in Sources */,
 				BA1FBC7F18FEC859008EBF0E /* HBFluddCellView.m in Sources */,
-				BA1FBC8818FECF52008EBF0E /* HBFluddBoardView.m in Sources */,
+				BA1FBC8818FECF52008EBF0E /* HBFluddGameView.m in Sources */,
 				BA1FBC5F18FEC5CA008EBF0E /* HBFluddViewController.m in Sources */,
 				BA0F3B291907981A00E4C8C2 /* HBFluddColorButton.m in Sources */,
 				BA0F3B3019092C6F00E4C8C2 /* HBFluddMovesRemainingView.m in Sources */,

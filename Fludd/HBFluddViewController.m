@@ -29,13 +29,34 @@
       nil]];
     self.navigationItem.title = @"Fludd";
     //self.navigationItem.leftBarButtonItem.image = [UIImage imageWithContentsOfFile:@"plus.png"];
-
-    self.model = [[HBFluddGame alloc] initWithBoardSize:kBoardSizeMedium];
     
-    // Create the board
+    // Add New Game Button
+    UIImage *plusImage = [UIImage imageNamed:@"plus.png"];
+    UIButton *plus = [UIButton buttonWithType:UIButtonTypeCustom];
+    plus.bounds = CGRectMake( 10, 0, plusImage.size.width/2, plusImage.size.height/2);
+    //[plus addTarget:self action:@selector(handleBack:) forControlEvents:UIControlEventTouchUpInside];
+    [plus setImage:plusImage forState:UIControlStateNormal];
+    UIBarButtonItem *newButton = [[UIBarButtonItem alloc] initWithCustomView:plus];
+    self.navigationItem.leftBarButtonItem = newButton;
+    //[self.navigationItem setHidesBackButton:YES animated:YES];
+    //[self.navigationItem setLeftBarButtonItem:nil animated:NO];
+    //[self.navigationItem setBackBarButtonItem:nil];
+    
+    // Add Settings Button
+    UIImage *settingsImage = [UIImage imageNamed:@"settings.png"];
+    UIButton *settings = [UIButton buttonWithType:UIButtonTypeCustom];
+    settings.bounds = CGRectMake( 0, 10, settingsImage.size.width/2, settingsImage.size.height/2);
+    //[plus addTarget:self action:@selector(handleBack:) forControlEvents:UIControlEventTouchUpInside];
+    [settings setImage:settingsImage forState:UIControlStateNormal];
+    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithCustomView:settings];
+    self.navigationItem.rightBarButtonItem = settingsButton;
+
+    // Create the game model
+    self.model = [[HBFluddGame alloc] initWithBoardSize:kBoardSizeMedium];
+    // Create the game view
     CGRect boardFrame = CGRectMake(10, 10, 300, 300);
-    self.boardView = [[HBFluddBoardView alloc] initWithFrame:boardFrame model:self.model.board];
-    [self.view addSubview:self.boardView];
+    self.gameView = [[HBFluddGameView alloc] initWithFrame:boardFrame model:self.model];
+    [self.view addSubview:self.gameView];
     
     // Create the color button models
     HBFluddColorButton *colorButton0 = [[HBFluddColorButton alloc] initWithColorID:0 color:[self.model.colors colorAtIndex:0]];
@@ -71,7 +92,6 @@
     [self.view addSubview:colorButtonView4];
     [self.view addSubview:colorButtonView5];
     
-    // Set up 'moves remaining' view
 
     
 }
@@ -79,9 +99,9 @@
 - (void)colorButtonTappedWithSender:(HBFluddColorButtonView *)sender
 {
     NSLog(@"ColorButtonTappedWithSender: ColorID = %i", sender.model.colorID);
-    [self.model updateFluddWithColorID:sender.model.colorID];
+    [self.model startFluddWithColorID:sender.model.colorID];
     [self.view setNeedsDisplay];
-    [self.boardView setNeedsDisplay];
+    [self.gameView setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning

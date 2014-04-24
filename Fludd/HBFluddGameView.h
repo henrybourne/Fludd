@@ -9,16 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "HBFluddCellView.h"
 #import "HBFluddColors.h"
-#import "HBFluddBoard.h"
+#import "HBFluddGame.h"
+#import "HBFluddMovesRemainingView.h"
 
 
+@interface HBFluddGameView : UIView
 
-@interface HBFluddBoardView : UIView
-
-@property HBFluddBoard *model;
+@property HBFluddGame *model;
 @property NSMutableArray *cellViews;
+@property HBFluddMovesRemainingView *movesRemainingView;
 
-- (id)initWithFrame:(CGRect)frame model:(HBFluddBoard *)model;
+- (id)initWithFrame:(CGRect)frame model:(HBFluddGame *)model;
 //- (HBFluddCellView *)cellViewAtRow:(int)row column:(int)column;
 
 @end

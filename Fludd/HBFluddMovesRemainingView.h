@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "HBFluddGame.h"
-#import "HB"
 
 @interface HBFluddMovesRemainingView : UIView
+
+@property HBFluddGame *model;
+@property UILabel *movesRemainingLabel;
+@property UILabel *movesRemainingTitleLabel;
 
 - (id)initWithFrame:(CGRect)frame model:(HBFluddGame *)model;
 

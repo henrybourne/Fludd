@@ -7,17 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HBFluddBoard.h"
-#import "HBFluddBoardView.h"
-#import "HBFluddCell.h"
-#import "HBFluddCellView.h"
-#import "HBFluddColorButtonView.h"
 #import "HBFluddGame.h"
+#import "HBFluddGameView.h"
+#import "HBFluddColorButtonView.h"
+#import "HBFluddMovesRemainingView.h"
 
 @interface HBFluddViewController : UIViewController
 
 @property HBFluddGame *model;
-@property HBFluddBoardView *boardView;
+@property HBFluddGameView *gameView;
+@property HBFluddMovesRemainingView *movesRemainingView;
 
 - (void)colorButtonTappedWithSender:(HBFluddColorButtonView *)sender;
 

@@ -15,17 +15,28 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        // Initialization code
-        UILabel *movesRemainingTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 60)];
-        movesRemainingTitleLabel.text = @"Moves Remaining";
-        [self addSubview:movesRemainingTitleLabel];
-        UILabel *movesRemainingLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 40, 300, 60)];
-        movesRemainingLabel.text = self.model.board.mo;
-        [self addSubview:movesRemainingLabel];
+        self.model = model;
+        
+        self.movesRemainingTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 300, 25)];
+        self.movesRemainingTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:20];
+        self.movesRemainingTitleLabel.textColor = [UIColor whiteColor];
+        self.movesRemainingTitleLabel.text = @"Moves Remaining";
+        [self addSubview:self.movesRemainingTitleLabel];
+        
+        self.movesRemainingLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 55)];
+        self.movesRemainingLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:55];
+        self.movesRemainingLabel.textColor = [UIColor whiteColor];
+        self.movesRemainingLabel.text = [NSString stringWithFormat:@"%i", self.model.movesRemaining];
+        [self addSubview:self.movesRemainingLabel];
     }
     return self;
 }
 
+- (void)setNeedsDisplay
+{
+    [super setNeedsDisplay];
+    self.movesRemainingLabel.text = [NSString stringWithFormat:@"%i", self.model.movesRemaining];
+}
 
 
 /*

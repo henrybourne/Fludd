@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "HBFluddColors.h"
-#import "HBFluddBoard.h"
+#import "HBFluddCell.h"
 
 static const int kNumberOfColors = 6;
+static const int kHBFluddBoardSizeInPoints = 300;
 
 typedef enum {
     kBoardSizeSmall,
@@ -21,18 +22,23 @@ typedef enum {
 
 @interface HBFluddGame : NSObject
 
-@property int boardSize;
-@property HBFluddBoard *board;
+@property int numberOfCells;
+@property int cellSize;
+@property NSMutableArray *cells;
 @property HBFluddColors *colors;
 @property int movesAllowed;
 @property int movesRemaining;
-@property NSArray *boardSizeParameters;
 
 - (id)initWithBoardSize:(BoardSize)boardSize;
 - (void)newGameWithBoardSize:(BoardSize)boardSize;
 - (void)restartGameWithSameBoard;
-- (void)updateFluddWithColorID:(int)colorID;
 - (BOOL)isGameWon;
 - (BOOL)isGameLost;
+
+- (HBFluddCell *)cellAtRow:(int)row column:(int)column;
+- (void)startFluddWithColorID:(int)colorID;
+- (void)fluddNeighboursAtRow:(int)row column:(int)column withColorID:(int)colorID;
+- (void)fluddAtRow:(int)row column:(int)column withColorID:(int)colorID;
+- (BOOL)isBoardFludded;
 
 @end
