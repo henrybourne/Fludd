@@ -2,17 +2,17 @@
 //  HBFluddColorButton.h
 //  Fludd
 //
-//  Created by Henry Bourne on 17/04/2014.
+//  Created by Henry Bourne on 23/04/2014.
 //  Copyright (c) 2014 Henry Bourne. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface HBFluddColorButton : UIControl
+@interface HBFluddColorButton : NSObject
 
 @property int colorID;
 @property UIColor *color;
 
-- (id)initWithFrame:(CGRect)frame colorID:(int)colorID color:(UIColor *)color;
+- (id)initWithColorID:(int)colorID color:(UIColor *)color;
 
 @end

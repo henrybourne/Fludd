@@ -7,20 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HBFluddSquare.h"
+#import "HBFluddCellView.h"
 #import "HBFluddColors.h"
+#import "HBFluddBoard.h"
 
-static const int kHBFluddBoardSize = 300;
 
 
 @interface HBFluddBoardView : UIView
-{
-    
-    NSMutableArray *board;
-    int boardSize;
-}
-@property HBFluddColors *boardColors;
 
-- (id)initWithFrame:(CGRect)frame numberOfSquares:(int)numberOfSquares colors:(HBFluddColors *)currentColors;
+@property HBFluddBoard *model;
+@property NSMutableArray *cellViews;
+
+- (id)initWithFrame:(CGRect)frame model:(HBFluddBoard *)model;
+//- (HBFluddCellView *)cellViewAtRow:(int)row column:(int)column;
 
 @end

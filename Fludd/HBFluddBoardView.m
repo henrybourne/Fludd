@@ -10,69 +10,65 @@
 
 @implementation HBFluddBoardView
 
-- (id)initWithFrame:(CGRect)frame numberOfSquares:(int)numberOfSquares colors:(HBFluddColors *)currentColors
+- (id)initWithFrame:(CGRect)frame model:(HBFluddBoard *)model
 {
     self = [self initWithFrame:frame];
     if (self)
     {
-        NSLog(@"[HBFluddBoard initWithNumberOfSquares]");
-        
-        self.boardColors = currentColors;
-        board = [NSMutableArray arrayWithCapacity:numberOfSquares];
-        int randomColorIndex;
-        int squareSize = kHBFluddBoardSize/numberOfSquares;
-        
-        for (int i = 0; i < numberOfSquares; i++)
+        NSLog(@"[HBFluddBoardView initWithFrame:model:]");
+        self.model = model;
+        self.cellViews = [NSMutableArray arrayWithCapacity:self.model.numberOfCells];
+        for (int row = 0; row < self.model.numberOfCells; row++)
         {
             // Set up the row array
-            NSMutableArray *currentRow = [NSMutableArray arrayWithCapacity:numberOfSquares];
-            for (int j = 0; j < numberOfSquares; j++) {
-                randomColorIndex = arc4random_uniform(6);
-                HBFluddSquare *currentSquare = [[HBFluddSquare alloc] initWithSize:squareSize colorID:randomColorIndex color:[self.boardColors colorAtIndex:randomColorIndex]];
-                
-                // Set up first fludded square
-                if (i == 0 && j == 0)
-                {
-                    currentSquare.isFludded = YES;
-                }
-
-                // Position and add square to board
-                [currentSquare setFrame:CGRectMake(squareSize*j, squareSize*i, squareSize, squareSize)];
-                [self addSubview:currentSquare];
-                
-                // Add the square into the row array
-                [currentRow setObject:currentSquare atIndexedSubscript:j];
+            NSMutableArray *currentRow = [NSMutableArray arrayWithCapacity:self.model.numberOfCells];
+            for (int column = 0; column < self.model.numberOfCells; column++)
+            {
+                HBFluddCell *currentCell = [self.model cellAtRow:row column:column];
+                HBFluddCellView *currentCellView = [[HBFluddCellView alloc] initWithFrame:CGRectMake(self.model.cellSize*column, self.model.cellSize*row, self.model.cellSize, self.model.cellSize)
+                                                                                    model:currentCell];
+                [self addSubview:currentCellView];
+                // Add the cell into the row array
+                [currentRow setObject:currentCellView atIndexedSubscript:column];
             }
-            
             // Add the row array into the board array
-            [board setObject:currentRow atIndexedSubscript:i];
+            [self.cellViews setObject:currentRow atIndexedSubscript:row];
         }
         
-        
-        
     }
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame
+- (void)setNeedsDisplay
 {
-    self = [super initWithFrame:frame];
-    if (self)
-    {
-        // Initialization code
-        NSLog(@"[HBFluddBoard initWithFrame]");
+    [super setNeedsDisplay];
+    for (NSMutableArray *row in self.cellViews) {
+        for (HBFluddCellView *cell in row) {
+            [cell setNeedsDisplay];
+        }
     }
-    return self;
 }
+
+//- (HBFluddCellView *)cellViewAtRow:(int)row column:(int)column
+//{
+//    return nil;
+//}
 
 //- (void)drawRect:(CGRect)rect
 //{
-//  
+//    
+////    for (int row = 0; row < self.model.numberOfCells; row++)
+////    {
+////        for (int column = 0; column < self.model.numberOfCells; column++)
+////        {
+////            
+////        }
+////    }
 //}
 
-- (HBFluddSquare *)squareAtRow:(int)row andColumn:(int)column
-{
-    return [[board objectAtIndex:row] objectAtIndex:column];
-}
+//- (HBFluddCellView *)squareAtRow:(int)row andColumn:(int)column
+//{
+//    return [[cells objectAtIndex:row] objectAtIndex:column];
+//}
 
 @end
