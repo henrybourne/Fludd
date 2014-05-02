@@ -28,6 +28,7 @@ typedef enum {
 @property HBFluddColors *colors;
 @property int movesAllowed;
 @property int movesRemaining;
+@property BOOL isFirstMove;
 
 - (id)initWithBoardSize:(BoardSize)boardSize;
 - (void)newGameWithBoardSize:(BoardSize)boardSize;

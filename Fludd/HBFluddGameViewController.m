@@ -6,19 +6,19 @@
 //  Copyright (c) 2014 Henry Bourne. All rights reserved.
 //
 
-#import "HBFluddViewController.h"
+#import "HBFluddGameViewController.h"
 
-@interface HBFluddViewController ()
+@interface HBFluddGameViewController ()
 
 @end
 
-@implementation HBFluddViewController
+@implementation HBFluddGameViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+    self.view.backgroundColor = [UIColor colorWithRed:0.204 green:0.204 blue:0.204 alpha:1];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.251 green:0.251 blue:0.251 alpha:1];
     self.navigationController.navigationBar.translucent = NO;
@@ -28,13 +28,16 @@
       [UIColor whiteColor],NSForegroundColorAttributeName,
       nil]];
     self.navigationItem.title = @"Fludd";
+    [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:5 forBarMetrics:UIBarMetricsDefault];
+
+
     //self.navigationItem.leftBarButtonItem.image = [UIImage imageWithContentsOfFile:@"plus.png"];
     
     // Add New Game Button
     UIImage *plusImage = [UIImage imageNamed:@"plus.png"];
     UIButton *plus = [UIButton buttonWithType:UIButtonTypeCustom];
     plus.bounds = CGRectMake( 10, 0, plusImage.size.width/2, plusImage.size.height/2);
-    //[plus addTarget:self action:@selector(handleBack:) forControlEvents:UIControlEventTouchUpInside];
+    [plus addTarget:self action:@selector(newButtonTapped) forControlEvents:UIControlEventTouchUpInside];
     [plus setImage:plusImage forState:UIControlStateNormal];
     UIBarButtonItem *newButton = [[UIBarButtonItem alloc] initWithCustomView:plus];
     self.navigationItem.leftBarButtonItem = newButton;
@@ -52,11 +55,12 @@
     self.navigationItem.rightBarButtonItem = settingsButton;
 
     // Create the game model
-    self.model = [[HBFluddGame alloc] initWithBoardSize:kBoardSizeMedium];
+    self.model = [[HBFluddGame alloc] initWithBoardSize:kBoardSizeSmall];
     // Create the game view
-    CGRect boardFrame = CGRectMake(10, 10, 300, 300);
-    self.gameView = [[HBFluddGameView alloc] initWithFrame:boardFrame model:self.model];
+    self.boardFrame = CGRectMake(10, 10, 300, 300);
+    self.gameView = [[HBFluddGameView alloc] initWithFrame:self.boardFrame model:self.model];
     [self.view addSubview:self.gameView];
+    self.isGameActive = YES;
     
     // Create the color button models
     HBFluddColorButton *colorButton0 = [[HBFluddColorButton alloc] initWithColorID:0 color:[self.model.colors colorAtIndex:0]];
@@ -96,12 +100,67 @@
     
 }
 
+
 - (void)colorButtonTappedWithSender:(HBFluddColorButtonView *)sender
 {
     NSLog(@"ColorButtonTappedWithSender: ColorID = %i", sender.model.colorID);
-    [self.model startFluddWithColorID:sender.model.colorID];
-    [self.view setNeedsDisplay];
-    [self.gameView setNeedsDisplay];
+    if (self.isGameActive)
+    {
+        [self.model startFluddWithColorID:sender.model.colorID];
+        if ([self.model isGameLost])
+        {
+            NSLog(@"GAME LOST");
+            self.isGameActive = NO;
+            
+            // Play again button
+            //UIImage *playAgainButtonImage = [UIImage imageNamed:@"playAgainButton.png"];
+            //self.playAgainButton = [[UIView alloc] initWithFrame:CGRectMake(0, 0, playAgainButtonImage.size.width, playAgainButtonImage.size.height)];
+
+            //self.playAgainButton = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"playAgainButton.png"]];
+            //[self.view addSubview:self.playAgainButton];
+            
+            //self.gameOverView = [[HBFluddGameOverView alloc] initWithFrame:self.view.frame];
+            //[self.view addSubview:self.gameOverView];
+        }
+        if ([self.model isGameWon])
+        {
+            NSLog(@"GAME WON");
+            self.isGameActive = NO;
+        }
+        [self.view setNeedsDisplay];
+        [self.gameView setNeedsDisplay];
+    }
+    
+
+}
+
+- (void)newButtonTapped
+{
+    self.isGameActive = YES;
+    self.oldGameView = self.gameView;
+    [self.model newGameWithBoardSize:kBoardSizeLarge];
+    self.gameView = [[HBFluddGameView alloc] initWithFrame:self.boardFrame model:self.model];
+    [self.view addSubview:self.gameView];
+    [self clearOldGameView];
+}
+
+- (void)gameWon
+{
+    
+}
+
+- (void)clearOldGameView
+{
+    [UIView animateWithDuration:0.2
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.oldGameView.frame = CGRectMake(self.oldGameView.frame.origin.x, 640, self.oldGameView.frame.size.width, self.oldGameView.frame.size.height);
+                         self.oldGameView.alpha = 0;
+                     }
+                     completion:^(BOOL finished){
+                         [self.oldGameView removeFromSuperview];
+                     }];
 }
 
 - (void)didReceiveMemoryWarning

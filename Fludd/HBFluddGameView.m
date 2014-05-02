@@ -15,7 +15,7 @@
     self = [self initWithFrame:frame];
     if (self)
     {
-        NSLog(@"[HBFluddBoardView initWithFrame:model:]");
+        NSLog(@"[HBFluddGameView initWithFrame:model:]");
         self.model = model;
         
         // Calculate total board size and create an offset to center it
@@ -52,35 +52,15 @@
 - (void)setNeedsDisplay
 {
     [super setNeedsDisplay];
-    for (NSMutableArray *row in self.cellViews) {
-        for (HBFluddCellView *cell in row) {
-            [cell setNeedsDisplay];
+    for (NSMutableArray *row in self.cellViews)
+    {
+        for (HBFluddCellView *cellView in row)
+        {
+            [cellView changeColor];
         }
     }
-    
     [self.movesRemainingView setNeedsDisplay];
 }
 
-//- (HBFluddCellView *)cellViewAtRow:(int)row column:(int)column
-//{
-//    return nil;
-//}
-
-//- (void)drawRect:(CGRect)rect
-//{
-//    
-////    for (int row = 0; row < self.model.numberOfCells; row++)
-////    {
-////        for (int column = 0; column < self.model.numberOfCells; column++)
-////        {
-////            
-////        }
-////    }
-//}
-
-//- (HBFluddCellView *)squareAtRow:(int)row andColumn:(int)column
-//{
-//    return [[cells objectAtIndex:row] objectAtIndex:column];
-//}
 
 @end

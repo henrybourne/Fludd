@@ -16,23 +16,19 @@
     if (self)
     {
         self.model = model;
+        self.backgroundColor = self.model.color;
     }
     return self;
 }
 
-- (void)drawRect:(CGRect)rect
+- (void)changeColor
 {
-    UIBezierPath* squarePath = [UIBezierPath bezierPathWithRect: CGRectMake(0, 0, self.model.cellSize, self.model.cellSize)];
-    [self.model.color setFill];
-    [squarePath fill];
-    
-    // VISUAL TEST TO SHOW WHICH ITEMS ARE FLUDDED
-    if (self.model.isFludded)
-    {
-        UIBezierPath* dotPath = [UIBezierPath bezierPathWithOvalInRect:CGRectMake((self.model.cellSize/2)-2, (self.model.cellSize/2)-2,4, 4)];
-        [[UIColor blackColor] setFill];
-        [dotPath fill];
-    }
+//    [UIView animateWithDuration:0.3 animations:^{ self.backgroundColor = self.model.color; }];
+    [UIView animateWithDuration:0.2
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{ self.backgroundColor = self.model.color; }
+                     completion:nil];
 }
 
 @end

@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		BA0F3B291907981A00E4C8C2 /* HBFluddColorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0F3B281907981A00E4C8C2 /* HBFluddColorButton.m */; };
 		BA0F3B3019092C6F00E4C8C2 /* HBFluddMovesRemainingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0F3B2F19092C6F00E4C8C2 /* HBFluddMovesRemainingView.m */; };
+		BA1E975219137A2D00DDB637 /* PlayAgainButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1E975019137A2D00DDB637 /* PlayAgainButton@2x.png */; };
+		BA1E975319137A2D00DDB637 /* WellDoneText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1E975119137A2D00DDB637 /* WellDoneText@2x.png */; };
+		BA1E97551913C16100DDB637 /* WellDone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA1E97541913C16100DDB637 /* WellDone@2x.png */; };
+		BA1E97581913C28900DDB637 /* HBFluddGameOverView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1E97571913C28900DDB637 /* HBFluddGameOverView.m */; };
+		BA1E975A1913C30300DDB637 /* HBFluddGameOverView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1E97591913C30300DDB637 /* HBFluddGameOverView.xib */; };
+		BA1E975E1913F5CF00DDB637 /* HBFluddMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1E975C1913F5CF00DDB637 /* HBFluddMenuTableViewController.m */; };
 		BA1FBC4918FEC5CA008EBF0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC4818FEC5CA008EBF0E /* Foundation.framework */; };
 		BA1FBC4B18FEC5CA008EBF0E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC4A18FEC5CA008EBF0E /* CoreGraphics.framework */; };
 		BA1FBC4D18FEC5CA008EBF0E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC4C18FEC5CA008EBF0E /* UIKit.framework */; };
@@ -16,7 +22,7 @@
 		BA1FBC5518FEC5CA008EBF0E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC5418FEC5CA008EBF0E /* main.m */; };
 		BA1FBC5918FEC5CA008EBF0E /* HBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC5818FEC5CA008EBF0E /* HBAppDelegate.m */; };
 		BA1FBC5C18FEC5CA008EBF0E /* Fludd.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1FBC5A18FEC5CA008EBF0E /* Fludd.storyboard */; };
-		BA1FBC5F18FEC5CA008EBF0E /* HBFluddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC5E18FEC5CA008EBF0E /* HBFluddViewController.m */; };
+		BA1FBC5F18FEC5CA008EBF0E /* HBFluddGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC5E18FEC5CA008EBF0E /* HBFluddGameViewController.m */; };
 		BA1FBC6118FEC5CA008EBF0E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1FBC6018FEC5CA008EBF0E /* Images.xcassets */; };
 		BA1FBC6818FEC5CA008EBF0E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC6718FEC5CA008EBF0E /* XCTest.framework */; };
 		BA1FBC6918FEC5CA008EBF0E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1FBC4818FEC5CA008EBF0E /* Foundation.framework */; };
@@ -28,6 +34,7 @@
 		BA1FBC8518FEC9AE008EBF0E /* HBFluddColors.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC8418FEC9AE008EBF0E /* HBFluddColors.m */; };
 		BA1FBC8818FECF52008EBF0E /* HBFluddGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1FBC8718FECF52008EBF0E /* HBFluddGameView.m */; };
 		BA3804701906D5B800B3EB5B /* HBFluddCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA38046F1906D5B800B3EB5B /* HBFluddCell.m */; };
+		BA4EDD8E190BDA0600F8581B /* HBFluddPlayAgainButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA4EDD8D190BDA0600F8581B /* HBFluddPlayAgainButtonView.m */; };
 		BA533A0F19004A5100B0482D /* HBFluddColorButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA533A0E19004A5100B0482D /* HBFluddColorButtonView.m */; };
 		BAC4CCA01905B5AB0088890E /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC4CC9C1905B5AB0088890E /* plus.png */; };
 		BAC4CCA11905B5AB0088890E /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC4CC9D1905B5AB0088890E /* plus@2x.png */; };
@@ -51,6 +58,14 @@
 		BA0F3B281907981A00E4C8C2 /* HBFluddColorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddColorButton.m; sourceTree = "<group>"; };
 		BA0F3B2E19092C6F00E4C8C2 /* HBFluddMovesRemainingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddMovesRemainingView.h; sourceTree = "<group>"; };
 		BA0F3B2F19092C6F00E4C8C2 /* HBFluddMovesRemainingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddMovesRemainingView.m; sourceTree = "<group>"; };
+		BA1E975019137A2D00DDB637 /* PlayAgainButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PlayAgainButton@2x.png"; sourceTree = "<group>"; };
+		BA1E975119137A2D00DDB637 /* WellDoneText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WellDoneText@2x.png"; sourceTree = "<group>"; };
+		BA1E97541913C16100DDB637 /* WellDone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WellDone@2x.png"; sourceTree = "<group>"; };
+		BA1E97561913C28900DDB637 /* HBFluddGameOverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddGameOverView.h; sourceTree = "<group>"; };
+		BA1E97571913C28900DDB637 /* HBFluddGameOverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddGameOverView.m; sourceTree = "<group>"; };
+		BA1E97591913C30300DDB637 /* HBFluddGameOverView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HBFluddGameOverView.xib; sourceTree = "<group>"; };
+		BA1E975B1913F5CF00DDB637 /* HBFluddMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddMenuTableViewController.h; sourceTree = "<group>"; };
+		BA1E975C1913F5CF00DDB637 /* HBFluddMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddMenuTableViewController.m; sourceTree = "<group>"; };
 		BA1FBC4518FEC5CA008EBF0E /* Fludd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fludd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1FBC4818FEC5CA008EBF0E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA1FBC4A18FEC5CA008EBF0E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,8 +77,8 @@
 		BA1FBC5718FEC5CA008EBF0E /* HBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBAppDelegate.h; sourceTree = "<group>"; };
 		BA1FBC5818FEC5CA008EBF0E /* HBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBAppDelegate.m; sourceTree = "<group>"; };
 		BA1FBC5B18FEC5CA008EBF0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Fludd.storyboard; sourceTree = "<group>"; };
-		BA1FBC5D18FEC5CA008EBF0E /* HBFluddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBFluddViewController.h; sourceTree = "<group>"; };
-		BA1FBC5E18FEC5CA008EBF0E /* HBFluddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBFluddViewController.m; sourceTree = "<group>"; };
+		BA1FBC5D18FEC5CA008EBF0E /* HBFluddGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HBFluddGameViewController.h; sourceTree = "<group>"; };
+		BA1FBC5E18FEC5CA008EBF0E /* HBFluddGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HBFluddGameViewController.m; sourceTree = "<group>"; };
 		BA1FBC6018FEC5CA008EBF0E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BA1FBC6618FEC5CA008EBF0E /* FluddTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FluddTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1FBC6718FEC5CA008EBF0E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -80,6 +95,8 @@
 		BA1FBC8718FECF52008EBF0E /* HBFluddGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddGameView.m; sourceTree = "<group>"; };
 		BA38046E1906D5B800B3EB5B /* HBFluddCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddCell.h; sourceTree = "<group>"; };
 		BA38046F1906D5B800B3EB5B /* HBFluddCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddCell.m; sourceTree = "<group>"; };
+		BA4EDD8C190BDA0600F8581B /* HBFluddPlayAgainButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddPlayAgainButtonView.h; sourceTree = "<group>"; };
+		BA4EDD8D190BDA0600F8581B /* HBFluddPlayAgainButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddPlayAgainButtonView.m; sourceTree = "<group>"; };
 		BA533A0D19004A5100B0482D /* HBFluddColorButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddColorButtonView.h; sourceTree = "<group>"; };
 		BA533A0E19004A5100B0482D /* HBFluddColorButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddColorButtonView.m; sourceTree = "<group>"; };
 		BAC4CC9C1905B5AB0088890E /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
@@ -130,8 +147,13 @@
 				BA1FBC8118FEC93B008EBF0E /* HBFluddGame.m */,
 				BA1FBC8618FECF52008EBF0E /* HBFluddGameView.h */,
 				BA1FBC8718FECF52008EBF0E /* HBFluddGameView.m */,
+				BA1E97561913C28900DDB637 /* HBFluddGameOverView.h */,
+				BA1E97571913C28900DDB637 /* HBFluddGameOverView.m */,
+				BA1E97591913C30300DDB637 /* HBFluddGameOverView.xib */,
 				BA0F3B2E19092C6F00E4C8C2 /* HBFluddMovesRemainingView.h */,
 				BA0F3B2F19092C6F00E4C8C2 /* HBFluddMovesRemainingView.m */,
+				BA4EDD8C190BDA0600F8581B /* HBFluddPlayAgainButtonView.h */,
+				BA4EDD8D190BDA0600F8581B /* HBFluddPlayAgainButtonView.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -139,6 +161,9 @@
 		BA0F3B3219092CAD00E4C8C2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BA1E975019137A2D00DDB637 /* PlayAgainButton@2x.png */,
+				BA1E97541913C16100DDB637 /* WellDone@2x.png */,
+				BA1E975119137A2D00DDB637 /* WellDoneText@2x.png */,
 				BAC4CC9C1905B5AB0088890E /* plus.png */,
 				BAC4CC9D1905B5AB0088890E /* plus@2x.png */,
 				BAC4CC9E1905B5AB0088890E /* settings.png */,
@@ -183,8 +208,10 @@
 				BA1FBC5718FEC5CA008EBF0E /* HBAppDelegate.h */,
 				BA1FBC5818FEC5CA008EBF0E /* HBAppDelegate.m */,
 				BA1FBC5A18FEC5CA008EBF0E /* Fludd.storyboard */,
-				BA1FBC5D18FEC5CA008EBF0E /* HBFluddViewController.h */,
-				BA1FBC5E18FEC5CA008EBF0E /* HBFluddViewController.m */,
+				BA1E975B1913F5CF00DDB637 /* HBFluddMenuTableViewController.h */,
+				BA1E975C1913F5CF00DDB637 /* HBFluddMenuTableViewController.m */,
+				BA1FBC5D18FEC5CA008EBF0E /* HBFluddGameViewController.h */,
+				BA1FBC5E18FEC5CA008EBF0E /* HBFluddGameViewController.m */,
 				BA0F3B3119092C8C00E4C8C2 /* Game */,
 				BA1FBC6018FEC5CA008EBF0E /* Images.xcassets */,
 				BA0F3B3219092CAD00E4C8C2 /* Images */,
@@ -305,9 +332,13 @@
 			files = (
 				BAC4CCA21905B5AB0088890E /* settings.png in Resources */,
 				BA1FBC6118FEC5CA008EBF0E /* Images.xcassets in Resources */,
+				BA1E97551913C16100DDB637 /* WellDone@2x.png in Resources */,
 				BAC4CCA31905B5AB0088890E /* settings@2x.png in Resources */,
 				BAC4CCA11905B5AB0088890E /* plus@2x.png in Resources */,
+				BA1E975319137A2D00DDB637 /* WellDoneText@2x.png in Resources */,
 				BA1FBC5318FEC5CA008EBF0E /* InfoPlist.strings in Resources */,
+				BA1E975219137A2D00DDB637 /* PlayAgainButton@2x.png in Resources */,
+				BA1E975A1913C30300DDB637 /* HBFluddGameOverView.xib in Resources */,
 				BA1FBC5C18FEC5CA008EBF0E /* Fludd.storyboard in Resources */,
 				BAC4CCA01905B5AB0088890E /* plus.png in Resources */,
 			);
@@ -328,17 +359,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA1E975E1913F5CF00DDB637 /* HBFluddMenuTableViewController.m in Sources */,
 				BA1FBC8218FEC93B008EBF0E /* HBFluddGame.m in Sources */,
 				BA1FBC7F18FEC859008EBF0E /* HBFluddCellView.m in Sources */,
 				BA1FBC8818FECF52008EBF0E /* HBFluddGameView.m in Sources */,
-				BA1FBC5F18FEC5CA008EBF0E /* HBFluddViewController.m in Sources */,
+				BA1FBC5F18FEC5CA008EBF0E /* HBFluddGameViewController.m in Sources */,
 				BA0F3B291907981A00E4C8C2 /* HBFluddColorButton.m in Sources */,
+				BA1E97581913C28900DDB637 /* HBFluddGameOverView.m in Sources */,
 				BA0F3B3019092C6F00E4C8C2 /* HBFluddMovesRemainingView.m in Sources */,
 				BA1FBC5918FEC5CA008EBF0E /* HBAppDelegate.m in Sources */,
 				BA1FBC5518FEC5CA008EBF0E /* main.m in Sources */,
 				BA3804701906D5B800B3EB5B /* HBFluddCell.m in Sources */,
 				BA533A0F19004A5100B0482D /* HBFluddColorButtonView.m in Sources */,
 				BA1FBC8518FEC9AE008EBF0E /* HBFluddColors.m in Sources */,
+				BA4EDD8E190BDA0600F8581B /* HBFluddPlayAgainButtonView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

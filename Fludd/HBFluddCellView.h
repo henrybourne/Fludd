@@ -14,5 +14,6 @@
 @property HBFluddCell *model;
 
 - (id)initWithFrame:(CGRect)frame model:(HBFluddCell *)model;
+- (void)changeColor;
 
 @end

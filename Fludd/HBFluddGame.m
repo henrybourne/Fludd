@@ -26,8 +26,8 @@
     switch (boardSize)
     {
         case kBoardSizeSmall:
-            self.numberOfCells  = 12;
-            self.movesAllowed   = 22;
+            self.numberOfCells  = 4;//12;
+            self.movesAllowed   = 1;//22;
             break;
             
         case kBoardSizeMedium:
@@ -47,6 +47,7 @@
     }
     self.movesRemaining = self.movesAllowed;
     self.colors = [[HBFluddColors alloc] init];
+    self.isFirstMove = YES;
     
     // Set up the cells
     self.cells = [NSMutableArray arrayWithCapacity:self.numberOfCells];
@@ -95,7 +96,7 @@
 
 - (BOOL)isGameLost
 {
-    if (self.movesRemaining == 0)
+    if (self.movesRemaining == 0 && ![self isBoardFludded])
     {
         return YES;
     }
@@ -110,7 +111,7 @@
 - (void)startFluddWithColorID:(int)colorID
 {
     // Don't do anything if the color is the same as the current fludd color
-    if (colorID == [[self cellAtRow:0 column:0] colorID])
+    if (colorID == [[self cellAtRow:0 column:0] colorID] && self.movesAllowed != self.movesRemaining)
     {
         return;
     }
@@ -138,8 +139,15 @@
         }
     }
     
-    // Check to see if the game is won
-    self.movesRemaining--;
+    if (!self.isFirstMove)
+    {
+        // Check to see if the game is won
+        self.movesRemaining--;
+    }
+    else
+    {
+        self.isFirstMove = NO;
+    }
     
 }
 
