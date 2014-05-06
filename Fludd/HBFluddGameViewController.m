@@ -14,48 +14,54 @@
 
 @implementation HBFluddGameViewController
 
+- (id)initWithBoardSize:(BoardSize)boardSize
+{
+    self = [super init];
+    if (self)
+    {
+        self.boardSize = boardSize;
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+//    // Add New Game Button
+//    UIImage *plusImage = [UIImage imageNamed:@"plus.png"];
+//    UIButton *plus = [UIButton buttonWithType:UIButtonTypeCustom];
+//    plus.bounds = CGRectMake( 10, 0, plusImage.size.width/2, plusImage.size.height/2);
+//    [plus addTarget:self action:@selector(newButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+//    [plus setImage:plusImage forState:UIControlStateNormal];
+//    UIBarButtonItem *newButton = [[UIBarButtonItem alloc] initWithCustomView:plus];
+//    self.navigationItem.leftBarButtonItem = newButton;
+    
+//    // Add Settings Button
+//    UIImage *settingsImage = [UIImage imageNamed:@"settings.png"];
+//    UIButton *settings = [UIButton buttonWithType:UIButtonTypeCustom];
+//    settings.bounds = CGRectMake( 0, 10, settingsImage.size.width/2, settingsImage.size.height/2);
+//    //[plus addTarget:self action:@selector(handleBack:) forControlEvents:UIControlEventTouchUpInside];
+//    [settings setImage:settingsImage forState:UIControlStateNormal];
+//    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithCustomView:settings];
+//    self.navigationItem.rightBarButtonItem = settingsButton;
+
+    
     self.view.backgroundColor = [UIColor colorWithRed:0.204 green:0.204 blue:0.204 alpha:1];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.251 green:0.251 blue:0.251 alpha:1];
-    self.navigationController.navigationBar.translucent = NO;
-    [self.navigationController.navigationBar setTitleTextAttributes:
-     [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIFont fontWithName:@"HelveticaNeue-Thin" size:35],NSFontAttributeName,
-      [UIColor whiteColor],NSForegroundColorAttributeName,
-      nil]];
-    self.navigationItem.title = @"Fludd";
-    [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:5 forBarMetrics:UIBarMetricsDefault];
-
-
-    //self.navigationItem.leftBarButtonItem.image = [UIImage imageWithContentsOfFile:@"plus.png"];
     
-    // Add New Game Button
-    UIImage *plusImage = [UIImage imageNamed:@"plus.png"];
-    UIButton *plus = [UIButton buttonWithType:UIButtonTypeCustom];
-    plus.bounds = CGRectMake( 10, 0, plusImage.size.width/2, plusImage.size.height/2);
-    [plus addTarget:self action:@selector(newButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    [plus setImage:plusImage forState:UIControlStateNormal];
-    UIBarButtonItem *newButton = [[UIBarButtonItem alloc] initWithCustomView:plus];
-    self.navigationItem.leftBarButtonItem = newButton;
-    //[self.navigationItem setHidesBackButton:YES animated:YES];
-    //[self.navigationItem setLeftBarButtonItem:nil animated:NO];
-    //[self.navigationItem setBackBarButtonItem:nil];
+//    [self.navigationController.navigationBar setTitleTextAttributes:
+//     [NSDictionary dictionaryWithObjectsAndKeys:
+//      [UIFont fontWithName:@"HelveticaNeue-Thin" size:35],NSFontAttributeName,
+//      [UIColor whiteColor],NSForegroundColorAttributeName,
+//      nil]];
+//    self.navigationItem.title = @"Fludd";
+//    [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:5 forBarMetrics:UIBarMetricsDefault];
     
-    // Add Settings Button
-    UIImage *settingsImage = [UIImage imageNamed:@"settings.png"];
-    UIButton *settings = [UIButton buttonWithType:UIButtonTypeCustom];
-    settings.bounds = CGRectMake( 0, 10, settingsImage.size.width/2, settingsImage.size.height/2);
-    //[plus addTarget:self action:@selector(handleBack:) forControlEvents:UIControlEventTouchUpInside];
-    [settings setImage:settingsImage forState:UIControlStateNormal];
-    UIBarButtonItem *settingsButton = [[UIBarButtonItem alloc] initWithCustomView:settings];
-    self.navigationItem.rightBarButtonItem = settingsButton;
 
+    
     // Create the game model
-    self.model = [[HBFluddGame alloc] initWithBoardSize:kBoardSizeSmall];
+    NSLog(@"HBFluddGameViewController self.boardSize = %i", self.boardSize);
+    self.model = [[HBFluddGame alloc] initWithBoardSize:self.boardSize];
     // Create the game view
     self.boardFrame = CGRectMake(10, 10, 300, 300);
     self.gameView = [[HBFluddGameView alloc] initWithFrame:self.boardFrame model:self.model];
@@ -70,13 +76,27 @@
     HBFluddColorButton *colorButton4 = [[HBFluddColorButton alloc] initWithColorID:4 color:[self.model.colors colorAtIndex:4]];
     HBFluddColorButton *colorButton5 = [[HBFluddColorButton alloc] initWithColorID:5 color:[self.model.colors colorAtIndex:5]];
     
+    // View Y positions for screen sizes
+    int colorButtonY = 0;
+    if ([UIScreen mainScreen].bounds.size.height == 568)
+    {
+        // iPhone retina-4 inch
+        colorButtonY = 340;
+    }
+    else
+    {
+        // iPhone retina-3.5 inch
+        colorButtonY = 320;
+    }
+    
     // Color button views
-    CGRect colorButtonFrame0 = CGRectMake(10, 340, 42, 42);
-    CGRect colorButtonFrame1 = CGRectMake(62, 340, 42, 42);
-    CGRect colorButtonFrame2 = CGRectMake(113, 340, 42, 42);
-    CGRect colorButtonFrame3 = CGRectMake(165, 340, 42, 42);
-    CGRect colorButtonFrame4 = CGRectMake(217, 340, 42, 42);
-    CGRect colorButtonFrame5 = CGRectMake(268, 340, 42, 42);
+    
+    CGRect colorButtonFrame0 = CGRectMake(10, colorButtonY, 42, 42);
+    CGRect colorButtonFrame1 = CGRectMake(62, colorButtonY, 42, 42);
+    CGRect colorButtonFrame2 = CGRectMake(113, colorButtonY, 42, 42);
+    CGRect colorButtonFrame3 = CGRectMake(165, colorButtonY, 42, 42);
+    CGRect colorButtonFrame4 = CGRectMake(217, colorButtonY, 42, 42);
+    CGRect colorButtonFrame5 = CGRectMake(268, colorButtonY, 42, 42);
     HBFluddColorButtonView *colorButtonView0 = [[HBFluddColorButtonView alloc] initWithFrame:colorButtonFrame0 model:colorButton0];
     HBFluddColorButtonView *colorButtonView1 = [[HBFluddColorButtonView alloc] initWithFrame:colorButtonFrame1 model:colorButton1];
     HBFluddColorButtonView *colorButtonView2 = [[HBFluddColorButtonView alloc] initWithFrame:colorButtonFrame2 model:colorButton2];
@@ -96,7 +116,18 @@
     [self.view addSubview:colorButtonView4];
     [self.view addSubview:colorButtonView5];
     
-
+    // Set up 'moves remaining' view
+    if ([UIScreen mainScreen].bounds.size.height == 568)
+    {
+        // iPhone retina-4 inch
+        self.movesRemainingView = [[HBFluddMovesRemainingView alloc] initWithFrame:CGRectMake(10, 400, 300, 40) model:self.model compactView:NO];
+    }
+    else
+    {
+        // iPhone retina-3.5 inch
+        self.movesRemainingView = [[HBFluddMovesRemainingView alloc] initWithFrame:CGRectMake(10, 360, 300, 40) model:self.model compactView:YES];
+    }
+    [self.view addSubview:self.movesRemainingView];
     
 }
 
@@ -111,24 +142,18 @@
         {
             NSLog(@"GAME LOST");
             self.isGameActive = NO;
-            
-            // Play again button
-            //UIImage *playAgainButtonImage = [UIImage imageNamed:@"playAgainButton.png"];
-            //self.playAgainButton = [[UIView alloc] initWithFrame:CGRectMake(0, 0, playAgainButtonImage.size.width, playAgainButtonImage.size.height)];
+            [self gameLost];
 
-            //self.playAgainButton = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"playAgainButton.png"]];
-            //[self.view addSubview:self.playAgainButton];
-            
-            //self.gameOverView = [[HBFluddGameOverView alloc] initWithFrame:self.view.frame];
-            //[self.view addSubview:self.gameOverView];
         }
         if ([self.model isGameWon])
         {
             NSLog(@"GAME WON");
             self.isGameActive = NO;
+            [self gameWon];
         }
         [self.view setNeedsDisplay];
         [self.gameView setNeedsDisplay];
+        [self.movesRemainingView setNeedsDisplay];
     }
     
 
@@ -138,28 +163,82 @@
 {
     self.isGameActive = YES;
     self.oldGameView = self.gameView;
-    [self.model newGameWithBoardSize:kBoardSizeLarge];
+    [self.model newGameWithBoardSize:self.boardSize];
     self.gameView = [[HBFluddGameView alloc] initWithFrame:self.boardFrame model:self.model];
-    [self.view addSubview:self.gameView];
+    [self.view insertSubview:self.gameView belowSubview:self.oldGameView];
     [self clearOldGameView];
+    [self.movesRemainingView setNeedsDisplay];
 }
 
 - (void)gameWon
 {
-    
+    self.gameWonView = [HBFluddGameWonView gameWonView];
+    int x = self.gameView.frame.origin.x + ((self.gameView.frame.size.width/2)-(self.gameWonView.frame.size.width/2));
+    int y = self.gameView.frame.origin.y + ((self.gameView.frame.size.height/2)-(self.gameWonView.frame.size.height/2));
+    self.gameWonView.frame = CGRectMake(x, y, self.gameWonView.frame.size.width, self.gameWonView.frame.size.height);
+    [self.gameWonView.playAgainButton addTarget:self action:@selector(newButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    self.gameWonView.alpha = 0;
+    self.gameWonView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+    [self.view addSubview:self.gameWonView];
+    [UIView animateWithDuration:0.3
+                          delay:0
+         usingSpringWithDamping:0.6
+          initialSpringVelocity:0.5
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.gameWonView.transform = CGAffineTransformMakeScale(1, 1);
+                         self.gameWonView.alpha = 1;
+                     }
+                     completion:^(BOOL finished){
+                     }];
+}
+
+- (void)gameLost
+{
+    self.gameLostView = [HBFluddGameLostView gameLostView];
+    int x = self.gameView.frame.origin.x + ((self.gameView.frame.size.width/2)-(self.gameLostView.frame.size.width/2));
+    int y = self.gameView.frame.origin.y + ((self.gameView.frame.size.height/2)-(self.gameLostView.frame.size.height/2));
+    self.gameLostView.frame = CGRectMake(x, y, self.gameLostView.frame.size.width, self.gameLostView.frame.size.height);
+    [self.gameLostView.playAgainButton addTarget:self action:@selector(newButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    self.gameLostView.alpha  = 0;
+    self.gameLostView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+    [self.view addSubview:self.gameLostView];
+    [UIView animateWithDuration:0.3
+                          delay:0
+         usingSpringWithDamping:0.6
+          initialSpringVelocity:0.5
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.gameLostView.transform = CGAffineTransformMakeScale(1, 1);
+                         self.gameLostView.alpha = 1;
+                     }
+                     completion:^(BOOL finished){
+                     }];
 }
 
 - (void)clearOldGameView
 {
-    [UIView animateWithDuration:0.2
+    
+    [UIView animateWithDuration:0.3
                           delay:0
+         usingSpringWithDamping:0.6
+          initialSpringVelocity:0.5
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         self.oldGameView.frame = CGRectMake(self.oldGameView.frame.origin.x, 640, self.oldGameView.frame.size.width, self.oldGameView.frame.size.height);
                          self.oldGameView.alpha = 0;
+                         self.oldGameView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+                         self.gameWonView.alpha = 0;
+                         self.gameWonView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+                         self.gameLostView.alpha = 0;
+                         self.gameLostView.transform = CGAffineTransformMakeScale(0.5, 0.5);
                      }
                      completion:^(BOOL finished){
+                         [self.gameLostView removeFromSuperview];
+                         self.gameLostView = nil;
+                         [self.gameWonView removeFromSuperview];
+                         self.gameWonView = nil;
                          [self.oldGameView removeFromSuperview];
+                         self.oldGameView = nil;
                      }];
 }
 

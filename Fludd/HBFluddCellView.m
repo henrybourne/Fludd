@@ -23,7 +23,6 @@
 
 - (void)changeColor
 {
-//    [UIView animateWithDuration:0.3 animations:^{ self.backgroundColor = self.model.color; }];
     [UIView animateWithDuration:0.2
                           delay:0
                         options:UIViewAnimationOptionCurveEaseOut

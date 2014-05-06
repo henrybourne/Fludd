@@ -10,21 +10,35 @@
 
 @implementation HBFluddMovesRemainingView
 
-- (id)initWithFrame:(CGRect)frame model:(HBFluddGame *)model
+- (id)initWithFrame:(CGRect)frame model:(HBFluddGame *)model compactView:(BOOL)compactView
 {
     self = [super initWithFrame:frame];
     if (self)
     {
         self.model = model;
+        self.compactView = compactView;
         
-        self.movesRemainingTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 300, 25)];
-        self.movesRemainingTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:20];
+        if (self.compactView == YES)
+        {
+            self.movesRemainingTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(53, 24, 300, 25)];
+            self.movesRemainingTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:17];
+
+            self.movesRemainingLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 55)];
+            self.movesRemainingLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:40];
+        }
+        else
+        {
+            self.movesRemainingTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 50, 300, 25)];
+            self.movesRemainingTitleLabel.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:20];
+
+            self.movesRemainingLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 55)];
+            self.movesRemainingLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:55];
+        }
+        
         self.movesRemainingTitleLabel.textColor = [UIColor whiteColor];
         self.movesRemainingTitleLabel.text = @"Moves Remaining";
         [self addSubview:self.movesRemainingTitleLabel];
         
-        self.movesRemainingLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 55)];
-        self.movesRemainingLabel.font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:55];
         self.movesRemainingLabel.textColor = [UIColor whiteColor];
         self.movesRemainingLabel.text = [NSString stringWithFormat:@"%i", self.model.movesRemaining];
         [self addSubview:self.movesRemainingLabel];
@@ -36,6 +50,17 @@
 {
     [super setNeedsDisplay];
     self.movesRemainingLabel.text = [NSString stringWithFormat:@"%i", self.model.movesRemaining];
+    if (self.compactView == YES)
+    {
+        if (self.model.movesRemaining < 10)
+        {
+            self.movesRemainingTitleLabel.frame = CGRectMake(30, self.movesRemainingTitleLabel.frame.origin.y, self.movesRemainingTitleLabel.frame.size.width,self.movesRemainingTitleLabel.frame.size.height);
+        }
+        else
+        {
+            self.movesRemainingTitleLabel.frame = CGRectMake(53, self.movesRemainingTitleLabel.frame.origin.y, self.movesRemainingTitleLabel.frame.size.width,self.movesRemainingTitleLabel.frame.size.height);
+        }
+    }
 }
 
 

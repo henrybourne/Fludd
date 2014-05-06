@@ -26,8 +26,8 @@
     switch (boardSize)
     {
         case kBoardSizeSmall:
-            self.numberOfCells  = 4;//12;
-            self.movesAllowed   = 1;//22;
+            self.numberOfCells  = 3;//12;
+            self.movesAllowed   = 22;
             break;
             
         case kBoardSizeMedium:
@@ -111,7 +111,7 @@
 - (void)startFluddWithColorID:(int)colorID
 {
     // Don't do anything if the color is the same as the current fludd color
-    if (colorID == [[self cellAtRow:0 column:0] colorID] && self.movesAllowed != self.movesRemaining)
+    if (colorID == [[self cellAtRow:0 column:0] colorID])
     {
         return;
     }
@@ -196,7 +196,7 @@
     {
         for (int column = 0; column < self.numberOfCells; column++)
         {
-            if ([self cellAtRow:row column:column].isFludded) {
+            if (![self cellAtRow:row column:column].isFludded) {
                 return NO;
             }
         }

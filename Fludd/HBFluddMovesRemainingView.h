@@ -14,7 +14,8 @@
 @property HBFluddGame *model;
 @property UILabel *movesRemainingLabel;
 @property UILabel *movesRemainingTitleLabel;
+@property BOOL compactView;
 
-- (id)initWithFrame:(CGRect)frame model:(HBFluddGame *)model;
+- (id)initWithFrame:(CGRect)frame model:(HBFluddGame *)model compactView:(BOOL)compactView;
 
 @end
