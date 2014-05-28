@@ -30,4 +30,24 @@
                      completion:nil];
 }
 
+- (void)cellAppears:(NSTimer *)timer
+{
+    NSLog(@"[HBFluddCellView cellAppears]");
+    
+    //double randomDelay = arc4random_uniform(100)/50.0;
+    //NSLog(@"[HBFluddCellView cellAppears] randomDelay %f", randomDelay);
+    
+    [UIView animateWithDuration:0.2
+                          delay:0
+         usingSpringWithDamping:0.6
+          initialSpringVelocity:1
+                        options:UIViewAnimationOptionCurveEaseOut
+                     animations:^{
+                         self.transform = CGAffineTransformMakeScale(1, 1);
+                         self.alpha = 1;
+                     }
+                     completion:^(BOOL finished){
+                     }];
+}
+
 @end

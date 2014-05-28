@@ -7,15 +7,27 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HBFluddNewGameButtonView.h"
 #import "HBFluddGameViewController.h"
+#import "HBFluddColorSetsViewController.h"
+#import "HBFluddGameSizesViewController.h"
+#import "HBFluddMenuButtonView.h"
 
-@interface HBFluddMenuViewController : UIViewController
+@interface HBFluddMenuViewController : UIViewController <HBFluddColorSetsViewControllerDelegate, HBFluddGameSizesViewControllerDelegate>
 
-@property BoardSize selectedBoardSize;
+@property HBFluddGameSize *selectedGameSize;
+@property HBFluddGameSizes *sizes;
+@property HBFluddColorSets *colors;
 @property UILabel *gameTitle;
-@property HBFluddNewGameButtonView *smallGameButton;
-@property HBFluddNewGameButtonView *mediumGameButton;
-@property HBFluddNewGameButtonView *largeGameButton;
+@property UILabel *settingsTitle;
+@property HBFluddMenuButtonView *smallGameButton;
+@property HBFluddMenuButtonView *mediumGameButton;
+@property HBFluddMenuButtonView *largeGameButton;
+@property HBFluddMenuButtonView *settingsSizeButton;
+@property HBFluddMenuButtonView *settingsColorButton;
+@property HBFluddMenuButtonView *settingsModeButton;
+
+
+- (NSString *)colorsArchivePath;
+- (BOOL)saveColors;
 
 @end

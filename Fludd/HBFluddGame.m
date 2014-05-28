@@ -10,43 +10,23 @@
 
 @implementation HBFluddGame
 
-- (id)initWithBoardSize:(BoardSize)boardSize
+- (id)initWithGameSize:(HBFluddGameSize *)gameSize colors:(HBFluddColorSets *)colors
 {
     self = [super init];
     if (self)
     {
-        [self newGameWithBoardSize:boardSize];
+        [self newGameWithGameSize:gameSize colors:colors];
     }
     return self;
 }
 
-- (void)newGameWithBoardSize:(BoardSize)boardSize
+- (void)newGameWithGameSize:(HBFluddGameSize *)gameSize colors:(HBFluddColorSets *)colors
 {
     
-    switch (boardSize)
-    {
-        case kBoardSizeSmall:
-            self.numberOfCells  = 3;//12;
-            self.movesAllowed   = 22;
-            break;
-            
-        case kBoardSizeMedium:
-            self.numberOfCells  = 17;
-            self.movesAllowed   = 30;
-            break;
-            
-        case kBoardSizeLarge:
-            self.numberOfCells  = 22;
-            self.movesAllowed   = 36;
-            break;
-            
-        default:
-            self.numberOfCells  = 6;
-            self.movesAllowed   = 12;
-            break;
-    }
+    self.movesAllowed = gameSize.movesAllowed;
+    self.numberOfCells = gameSize.numberOfCells;
     self.movesRemaining = self.movesAllowed;
-    self.colors = [[HBFluddColors alloc] init];
+    self.colors = colors;
     self.isFirstMove = YES;
     
     // Set up the cells
@@ -111,7 +91,7 @@
 - (void)startFluddWithColorID:(int)colorID
 {
     // Don't do anything if the color is the same as the current fludd color
-    if (colorID == [[self cellAtRow:0 column:0] colorID])
+    if (colorID == [[self cellAtRow:0 column:0] colorID] && !self.isFirstMove)
     {
         return;
     }
@@ -203,5 +183,21 @@
     }
     return YES;
 }
+
+# pragma mark - NSCoder
+
+//- (void)encodeWithCoder:(NSCoder *)aCoder {
+//    [aCoder encodeInt:self.numberOfCells forKey:@"numberOfCells"];
+//    [aCoder encodeInt:self.cellSize forKey:@"cellSize"];
+//    [aCoder encodeObject:self.cells forKey:@"cells"];
+//    [aCoder encodeObject:self.colors forKey:@"colors"];
+//    [aCoder encodeInt:self.movesAllowed forKey:@"movesAllowed"];
+//    [aCoder encodeInt:self.movesRemaining forKey:@"movesRemaining"];
+//    [aCoder encodeBool:self.isFirstMove forKey:@"isFirstMove"];
+//}
+
+//- (id)initWithCoder:(NSCoder *)aDecoder {
+//    
+//}
 
 @end

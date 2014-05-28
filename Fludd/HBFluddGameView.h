@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HBFluddCellView.h"
-#import "HBFluddColors.h"
+#import "HBFluddColorSets.h"
 #import "HBFluddGame.h"
 #import "HBFluddMovesRemainingView.h"
 
@@ -18,10 +18,7 @@
 @property HBFluddGame *model;
 @property NSMutableArray *cellViews;
 @property HBFluddMovesRemainingView *movesRemainingView;
-@property NSTimer *cellAppearsTimer;
-@property int timerCurrentCellIndex;
 
 - (id)initWithFrame:(CGRect)frame model:(HBFluddGame *)model;
-//- (HBFluddCellView *)cellViewAtRow:(int)row column:(int)column;
 
 @end

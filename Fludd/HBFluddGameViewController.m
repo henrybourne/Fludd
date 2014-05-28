@@ -14,12 +14,12 @@
 
 @implementation HBFluddGameViewController
 
-- (id)initWithBoardSize:(BoardSize)boardSize
+- (id)initWithGameSize:(HBFluddGameSize *)gameSize
 {
     self = [super init];
     if (self)
     {
-        self.boardSize = boardSize;
+        self.gameSize = gameSize;
     }
     return self;
 }
@@ -29,13 +29,13 @@
     [super viewDidLoad];
     
 //    // Add New Game Button
-//    UIImage *plusImage = [UIImage imageNamed:@"plus.png"];
-//    UIButton *plus = [UIButton buttonWithType:UIButtonTypeCustom];
-//    plus.bounds = CGRectMake( 10, 0, plusImage.size.width/2, plusImage.size.height/2);
-//    [plus addTarget:self action:@selector(newButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-//    [plus setImage:plusImage forState:UIControlStateNormal];
-//    UIBarButtonItem *newButton = [[UIBarButtonItem alloc] initWithCustomView:plus];
-//    self.navigationItem.leftBarButtonItem = newButton;
+    UIImage *plusImage = [UIImage imageNamed:@"plus.png"];
+    UIButton *plus = [UIButton buttonWithType:UIButtonTypeCustom];
+    plus.bounds = CGRectMake( 10, 0, plusImage.size.width/2, plusImage.size.height/2);
+    [plus addTarget:self action:@selector(newButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [plus setImage:plusImage forState:UIControlStateNormal];
+    UIBarButtonItem *newButton = [[UIBarButtonItem alloc] initWithCustomView:plus];
+    self.navigationItem.rightBarButtonItem = newButton;
     
 //    // Add Settings Button
 //    UIImage *settingsImage = [UIImage imageNamed:@"settings.png"];
@@ -60,8 +60,8 @@
 
     
     // Create the game model
-    NSLog(@"HBFluddGameViewController self.boardSize = %i", self.boardSize);
-    self.model = [[HBFluddGame alloc] initWithBoardSize:self.boardSize];
+    NSLog(@"HBFluddGameViewController self.boardSize = %i", self.gameSize.numberOfCells);
+    self.model = [[HBFluddGame alloc] initWithGameSize:self.gameSize colors:self.colors];
     // Create the game view
     self.boardFrame = CGRectMake(10, 10, 300, 300);
     self.gameView = [[HBFluddGameView alloc] initWithFrame:self.boardFrame model:self.model];
@@ -131,6 +131,11 @@
     
 }
 
+//- (void)viewDidAppear:(BOOL)animated
+//{
+//    [self.gameView makeCellsAppear];
+//}
+
 
 - (void)colorButtonTappedWithSender:(HBFluddColorButtonView *)sender
 {
@@ -163,7 +168,7 @@
 {
     self.isGameActive = YES;
     self.oldGameView = self.gameView;
-    [self.model newGameWithBoardSize:self.boardSize];
+    [self.model newGameWithGameSize:self.gameSize colors:self.colors];
     self.gameView = [[HBFluddGameView alloc] initWithFrame:self.boardFrame model:self.model];
     [self.view insertSubview:self.gameView belowSubview:self.oldGameView];
     [self clearOldGameView];
@@ -219,18 +224,16 @@
 - (void)clearOldGameView
 {
     
-    [UIView animateWithDuration:0.3
+    [UIView animateWithDuration:0.14
                           delay:0
-         usingSpringWithDamping:0.6
-          initialSpringVelocity:0.5
-                        options:UIViewAnimationOptionCurveEaseOut
+                        options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
                          self.oldGameView.alpha = 0;
-                         self.oldGameView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+                         //self.oldGameView.transform = CGAffineTransformMakeScale(0.5, 0.5);
                          self.gameWonView.alpha = 0;
-                         self.gameWonView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+                         self.gameWonView.transform = CGAffineTransformMakeScale(2, 2);
                          self.gameLostView.alpha = 0;
-                         self.gameLostView.transform = CGAffineTransformMakeScale(0.5, 0.5);
+                         self.gameLostView.transform = CGAffineTransformMakeScale(2, 2);
                      }
                      completion:^(BOOL finished){
                          [self.gameLostView removeFromSuperview];

@@ -7,7 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "HBFluddColors.h"
+#import "HBFluddColorSets.h"
 
 @interface HBFloodColorsTest : XCTestCase
 
@@ -28,7 +28,7 @@
 }
 
 -(void)testColorAtIndex {
-    HBFluddColors *colors = [[HBFluddColors alloc] init];
+    HBFluddColorSets *colors = [[HBFluddColorSets alloc] init];
     
     XCTAssertTrue([colors colorAtIndex:0]  [UIColor colorWithRed:0.741 green:0.314 blue:0.314 alpha:1], @"fjhsdkfbjs");
 }

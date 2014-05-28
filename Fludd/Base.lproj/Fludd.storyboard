@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="PPJ-eH-b4E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="PPJ-eH-b4E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -15,19 +15,76 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.20392158627510071" green="0.20392158627510071" blue="0.20392158627510071" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="qnl-yO-gMx"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="571" y="41"/>
+            <point key="canvasLocation" x="687" y="41"/>
+        </scene>
+        <!--Fludd Color Sets View Controller-->
+        <scene sceneID="MPs-vl-c3G">
+            <objects>
+                <viewController id="gCm-hn-4qk" customClass="HBFluddColorSetsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8wG-XP-253"/>
+                        <viewControllerLayoutGuide type="bottom" id="q70-NS-iTu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="djA-r7-NZW">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PPz-i0-Ikh"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3nL-LB-JLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="687" y="760"/>
+        </scene>
+        <!--Fludd Game Sizes View Controller-->
+        <scene sceneID="3g5-2Q-WuP">
+            <objects>
+                <viewController id="Hpy-Nm-cDb" customClass="HBFluddGameSizesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kSW-mO-DIB"/>
+                        <viewControllerLayoutGuide type="bottom" id="w11-vH-v3Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A9d-9M-TFE">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jGN-J1-Q23"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ndm-tA-EtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="687" y="1462"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="keX-Dq-u1X">
+            <objects>
+                <viewController id="lXe-ro-8Sa" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="63x-XU-lGs"/>
+                        <viewControllerLayoutGuide type="bottom" id="ge7-Lv-zrY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lMz-fe-DFU">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uMT-FP-Ofo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DyW-hQ-Ypd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="687" y="2142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Gx-2P-voZ">
             <objects>
                 <navigationController definesPresentationContext="YES" id="PPJ-eH-b4E" sceneMemberID="viewController">
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Eac-Cc-QeM">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -50,13 +107,16 @@
                     <view key="view" contentMode="scaleToFill" id="Skc-TR-3Rl">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.20392158630000001" green="0.20392158630000001" blue="0.20392158630000001" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="nVY-Og-R9k"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="push" identifier="newGameSegue" id="2br-Mf-fB9"/>
+                        <segue destination="gCm-hn-4qk" kind="push" identifier="colorSegue" id="Fp2-md-IdJ"/>
+                        <segue destination="Hpy-Nm-cDb" kind="push" identifier="sizeSegue" id="m3Y-zO-vTB"/>
+                        <segue destination="lXe-ro-8Sa" kind="push" identifier="modeSegue" id="ZaD-ML-wND"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbQ-7c-bJA" userLabel="First Responder" sceneMemberID="firstResponder"/>

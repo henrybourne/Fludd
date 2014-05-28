@@ -14,20 +14,22 @@
 #import "HBFluddPlayAgainButtonView.h"
 #import "HBFluddGameWonView.h"
 #import "HBFluddGameLostView.h"
+#import "HBFluddGameSize.h"
 
 @interface HBFluddGameViewController : UIViewController
 
 @property HBFluddGame *model;
+@property HBFluddColorSets *colors;
 @property HBFluddGameView *gameView;
 @property HBFluddGameView *oldGameView;
 @property HBFluddMovesRemainingView *movesRemainingView;
 @property HBFluddGameWonView *gameWonView;
 @property HBFluddGameLostView *gameLostView;
+@property HBFluddGameSize *gameSize;
 @property CGRect boardFrame;
 @property BOOL isGameActive;
-@property BoardSize boardSize;
 
-- (id)initWithBoardSize:(BoardSize)boardSize;
+- (id)initWithGameSize:(HBFluddGameSize *)gameSize;
 - (void)colorButtonTappedWithSender:(HBFluddColorButtonView *)sender;
 - (void)newButtonTapped;
 

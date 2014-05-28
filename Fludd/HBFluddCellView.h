@@ -12,8 +12,10 @@
 @interface HBFluddCellView : UIView
 
 @property HBFluddCell *model;
+@property NSTimer *cellAppearsTimer;
 
 - (id)initWithFrame:(CGRect)frame model:(HBFluddCell *)model;
 - (void)changeColor;
+- (void)cellAppears:(NSTimer *)timer;
 
 @end
