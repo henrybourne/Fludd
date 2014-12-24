@@ -19,6 +19,7 @@
         self.colorID    = colorID;
         self.color      = color;
         self.isFludded  = NO;
+        self.isWall     = NO;
     }
     return self;
 }

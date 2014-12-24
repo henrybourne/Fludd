@@ -7,7 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HBFluddGameMode.h"
 
-@interface HBFluddGameModes : NSObject
+typedef NS_ENUM(NSInteger, HBFluddGameModeOptions) {
+    HBFluddGameModeNormal,
+    HBFluddGameModeWalls,
+    HBFluddGameModeTimed
+};
+
+@interface HBFluddGameModes : NSObject <NSCoding>
+
+@property NSMutableArray *modes;
+@property int selectedIndex;
+
+- (HBFluddGameMode *)modeAtIndex:(int)index;
+- (HBFluddGameMode *)selectedMode;
+- (void)setMode:(int)index;
+- (int)numberOfModes;
 
 @end

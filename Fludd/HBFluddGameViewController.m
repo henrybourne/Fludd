@@ -14,11 +14,12 @@
 
 @implementation HBFluddGameViewController
 
-- (id)initWithGameSize:(HBFluddGameSize *)gameSize
+- (id)initWithGameMode:(HBFluddGameMode *)gameMode size:(HBFluddGameSize *)gameSize
 {
     self = [super init];
     if (self)
     {
+        self.gameMode = gameMode;
         self.gameSize = gameSize;
     }
     return self;
@@ -61,7 +62,7 @@
     
     // Create the game model
     NSLog(@"HBFluddGameViewController self.boardSize = %i", self.gameSize.numberOfCells);
-    self.model = [[HBFluddGame alloc] initWithGameSize:self.gameSize colors:self.colors];
+    self.model = [[HBFluddGame alloc] initWithGameMode:self.gameMode size:self.gameSize colors:self.colors];
     // Create the game view
     self.boardFrame = CGRectMake(10, 10, 300, 300);
     self.gameView = [[HBFluddGameView alloc] initWithFrame:self.boardFrame model:self.model];
@@ -168,7 +169,7 @@
 {
     self.isGameActive = YES;
     self.oldGameView = self.gameView;
-    [self.model newGameWithGameSize:self.gameSize colors:self.colors];
+    [self.model newGameWithGameMode: self.gameMode size:self.gameSize colors:self.colors];
     self.gameView = [[HBFluddGameView alloc] initWithFrame:self.boardFrame model:self.model];
     [self.view insertSubview:self.gameView belowSubview:self.oldGameView];
     [self clearOldGameView];

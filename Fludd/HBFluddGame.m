@@ -10,28 +10,30 @@
 
 @implementation HBFluddGame
 
-- (id)initWithGameSize:(HBFluddGameSize *)gameSize colors:(HBFluddColorSets *)colors
+- (id)initWithGameMode:(HBFluddGameMode *)mode size:(HBFluddGameSize *)gameSize colors:(HBFluddColorSets *)colors
 {
     self = [super init];
     if (self)
     {
-        [self newGameWithGameSize:gameSize colors:colors];
+        [self newGameWithGameMode:mode size:gameSize colors:colors];
     }
     return self;
 }
 
-- (void)newGameWithGameSize:(HBFluddGameSize *)gameSize colors:(HBFluddColorSets *)colors
+- (void)newGameWithGameMode:(HBFluddGameMode *)mode size:(HBFluddGameSize *)gameSize colors:(HBFluddColorSets *)colors
 {
     
     self.movesAllowed = gameSize.movesAllowed;
     self.numberOfCells = gameSize.numberOfCells;
     self.movesRemaining = self.movesAllowed;
     self.colors = colors;
+    self.gameMode = mode;
     self.isFirstMove = YES;
     
     // Set up the cells
     self.cells = [NSMutableArray arrayWithCapacity:self.numberOfCells];
     self.cellSize = kHBFluddBoardSizeInPoints/self.numberOfCells;
+    NSLog(@"[HBFluddGame newGameWithGameMode] self.cellSize = %i", self.cellSize);
     
     int randomColorIndex;
     
@@ -58,6 +60,33 @@
         
         // Add the row array into the board array
         [self.cells setObject:currentRow atIndexedSubscript:row];
+    }
+    
+    // Wall Mode - Create Walls
+    if (self.gameMode.type == HBFluddGameModeTypeWalls)
+    {
+        int randomRow = 0;
+        int randomColumn = 0;
+        
+        for (int i = 0; i < gameSize.numberOfWalls; i++)
+        {
+            randomRow = arc4random_uniform(self.numberOfCells-2)+1;
+            randomColumn = arc4random_uniform(self.numberOfCells-2)+1;
+            if (randomRow == 0 && randomColumn == 0)
+            {
+                i--;
+                continue;
+            }
+            NSLog(@"randomRow %i randomColumn %i", randomRow, randomColumn);
+            HBFluddCell *currentCell = [[self.cells objectAtIndex:randomRow] objectAtIndex:randomColumn];
+            currentCell.isWall = YES;
+        }
+    }
+    
+    // Timer Mode
+    if (self.gameMode.type == HBFluddGameModeTypeTimed)
+    {
+        
     }
     
     // Check if a fludd should happen right away
@@ -162,7 +191,7 @@
     {
         return;
     }
-    if (currentCell.colorID == colorID)
+    if (currentCell.colorID == colorID && !currentCell.isWall)
     {
         currentCell.isFludded = YES;
         // Recurse to test neighbors of newly fludded cell
@@ -176,7 +205,7 @@
     {
         for (int column = 0; column < self.numberOfCells; column++)
         {
-            if (![self cellAtRow:row column:column].isFludded) {
+            if (![self cellAtRow:row column:column].isWall && ![self cellAtRow:row column:column].isFludded) {
                 return NO;
             }
         }

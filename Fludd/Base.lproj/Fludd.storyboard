@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="PPJ-eH-b4E">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="PPJ-eH-b4E">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="41"/>
+            <point key="canvasLocation" x="919" y="-1026"/>
         </scene>
         <!--Fludd Color Sets View Controller-->
         <scene sceneID="MPs-vl-c3G">
@@ -36,11 +36,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </view>
                     <navigationItem key="navigationItem" id="PPz-i0-Ikh"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nL-LB-JLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="760"/>
+            <point key="canvasLocation" x="919" y="1101"/>
         </scene>
         <!--Fludd Game Sizes View Controller-->
         <scene sceneID="3g5-2Q-WuP">
@@ -59,12 +58,76 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ndm-tA-EtI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="1462"/>
+            <point key="canvasLocation" x="919" y="395"/>
         </scene>
-        <!--View Controller-->
+        <!--Fludd How To Play View Controller-->
+        <scene sceneID="ZQn-1B-AKK">
+            <objects>
+                <viewController id="Sdc-eP-D04" customClass="HBFluddHowToPlayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oop-z4-ctS"/>
+                        <viewControllerLayoutGuide type="bottom" id="bC7-j8-p7M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jft-lO-lZX">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uaZ-aH-fpZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kur-Pw-9Xm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="919" y="1823"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="oXx-p5-8BP">
+            <objects>
+                <pageViewController storyboardIdentifier="HowToPlayPageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="6i5-RC-BG3" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hyg-HZ-b07"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="faj-dq-874" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1322" y="1823"/>
+        </scene>
+        <!--Fludd How To Play Content View Controller-->
+        <scene sceneID="nbS-mO-XEL">
+            <objects>
+                <viewController storyboardIdentifier="HowToPlayContentViewController" id="q8r-Zt-Yr7" customClass="HBFluddHowToPlayContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fkr-TA-t9N"/>
+                        <viewControllerLayoutGuide type="bottom" id="P6e-zg-And"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zrh-Lq-ss8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IuD-mh-YLj">
+                                <rect key="frame" x="45" y="25" width="230" height="230"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TEXT" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="230" translatesAutoresizingMaskIntoConstraints="NO" id="SXm-0f-k5y">
+                                <rect key="frame" x="45" y="283" width="230" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="IuD-mh-YLj" id="V0T-k8-fZD"/>
+                        <outlet property="textLabel" destination="SXm-0f-k5y" id="8I7-e6-HRH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tbu-40-JFR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718" y="1823"/>
+        </scene>
+        <!--Fludd Game Modes View Controller-->
         <scene sceneID="keX-Dq-u1X">
             <objects>
-                <viewController id="lXe-ro-8Sa" sceneMemberID="viewController">
+                <viewController id="lXe-ro-8Sa" customClass="HBFluddGameModesViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="63x-XU-lGs"/>
                         <viewControllerLayoutGuide type="bottom" id="ge7-Lv-zrY"/>
@@ -78,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DyW-hQ-Ypd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="2142"/>
+            <point key="canvasLocation" x="919" y="-317"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Gx-2P-voZ">
@@ -114,9 +177,10 @@
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="push" identifier="newGameSegue" id="2br-Mf-fB9"/>
-                        <segue destination="gCm-hn-4qk" kind="push" identifier="colorSegue" id="Fp2-md-IdJ"/>
-                        <segue destination="Hpy-Nm-cDb" kind="push" identifier="sizeSegue" id="m3Y-zO-vTB"/>
-                        <segue destination="lXe-ro-8Sa" kind="push" identifier="modeSegue" id="ZaD-ML-wND"/>
+                        <segue destination="gCm-hn-4qk" kind="push" identifier="colorsSegue" id="Fp2-md-IdJ"/>
+                        <segue destination="Hpy-Nm-cDb" kind="push" identifier="sizesSegue" id="m3Y-zO-vTB"/>
+                        <segue destination="lXe-ro-8Sa" kind="push" identifier="modesSegue" id="ZaD-ML-wND"/>
+                        <segue destination="Sdc-eP-D04" kind="push" identifier="howToPlaySegue" id="DVe-Xq-mZv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbQ-7c-bJA" userLabel="First Responder" sceneMemberID="firstResponder"/>

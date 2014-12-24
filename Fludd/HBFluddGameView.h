@@ -18,6 +18,7 @@
 @property HBFluddGame *model;
 @property NSMutableArray *cellViews;
 @property HBFluddMovesRemainingView *movesRemainingView;
+@property UIView *wallBackgroundView;
 
 - (id)initWithFrame:(CGRect)frame model:(HBFluddGame *)model;
 

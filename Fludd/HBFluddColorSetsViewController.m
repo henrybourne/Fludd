@@ -40,14 +40,16 @@
              [colorButton showAccessory:HBFluddMenuButtonAccessoryTypeCheck];
         }
         
-        if (count == [self.colors numberOfColorSets]-1)
-        {
-            [colorButton showBorder:HBFluddMenuButtonBorderTypeBoth];
-        }
-        else
-        {
-            [colorButton showBorder:HBFluddMenuButtonBorderTypeTop];
-        }
+        [colorButton showBorder:HBFluddMenuButtonBorderTypeBottom];
+        
+//        if (count == [self.colors numberOfColorSets]-1)
+//        {
+//            [colorButton showBorder:HBFluddMenuButtonBorderTypeBoth];
+//        }
+//        else
+//        {
+//            [colorButton showBorder:HBFluddMenuButtonBorderTypeTop];
+//        }
         
         [self.view addSubview:colorButton];
         [colorButton addTarget:self action:@selector(colorSetButtonTappedWithSender:) forControlEvents:UIControlEventTouchUpInside];

@@ -15,6 +15,7 @@
 @property int colorID;
 @property UIColor *color;
 @property int cellSize;
+@property BOOL isWall;
 
 - (id)initWithSize:(int)cellSize colorID:(int)colorID color:(UIColor *)color;
 

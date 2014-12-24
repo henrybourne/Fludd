@@ -31,14 +31,16 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithRed:0.204 green:0.204 blue:0.204 alpha:1];
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.251 green:0.251 blue:0.251 alpha:1];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.204 green:0.204 blue:0.204 alpha:1];//[UIColor colorWithRed:0.251 green:0.251 blue:0.251 alpha:1];
     self.navigationController.navigationBar.translucent = NO;
+    [self.navigationController.navigationBar setShadowImage:[[UIImage alloc] init]];
+    [self.navigationController.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarMetrics:UIBarMetricsDefault];
     [self.navigationController.navigationBar setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
-      [UIFont fontWithName:@"HelveticaNeue-Thin" size:25],NSFontAttributeName,
+      [UIFont fontWithName:@"HelveticaNeue-Light" size:25],NSFontAttributeName,
       [UIColor whiteColor],NSForegroundColorAttributeName,
       nil]];
-    [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:1 forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController.navigationBar setTitleVerticalPositionAdjustment:2 forBarMetrics:UIBarMetricsDefault];
     self.navigationItem.title = @"Fludd";
     
     self.navigationItem.backBarButtonItem   = [[UIBarButtonItem alloc] initWithTitle:@"Menu"
@@ -46,45 +48,61 @@
                                                                               target:nil
                                                                               action:nil];
     
-    // New Game title
-    self.gameTitle = [[UILabel alloc] initWithFrame:CGRectMake(30, 25, 200, 30)];
-    self.gameTitle.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:25];
-    self.gameTitle.textColor = [UIColor colorWithRed:0.800 green:0.690 blue:0.263 alpha:1];
-    self.gameTitle.text = @"New Game";
-    [self.view addSubview:self.gameTitle];
+    // ----------------------------------------
+    // Set up cell view variables
+    if ([UIScreen mainScreen].bounds.size.height == 568)
+    {
+        // iPhone retina-4 inch
+        self.cellRows = 10;
+        self.yPosMenuButtons = 165;
+        self.yPosNewButton = 35;
+    }
+    else
+    {
+        // iPhone retina-3.5 inch
+        self.cellRows = 5;
+        self.yPosMenuButtons = 145;
+        self.yPosNewButton = 25;
+    }
     
-    // New Game Buttons
-    self.smallGameButton = [[HBFluddMenuButtonView alloc] initWithFrame:CGRectMake(0, 65, 320, 45) mainLabel:@"Small"];
-    [self.smallGameButton showAccessory:HBFluddMenuButtonAccessoryTypeChevron];
-    [self.smallGameButton showBorder:HBFluddMenuButtonBorderTypeTop];
-    [self.smallGameButton showSublabel:@"12 x 12"];
-   
-    self.mediumGameButton = [[HBFluddMenuButtonView alloc] initWithFrame:CGRectMake(0, 110, 320, 45) mainLabel:@"Medium"];
-    [self.mediumGameButton showAccessory:HBFluddMenuButtonAccessoryTypeChevron];
-    [self.mediumGameButton showBorder:HBFluddMenuButtonBorderTypeTop];
-    [self.mediumGameButton showSublabel:@"17 x 17"];
+    // ---------------------------------------
+    // New Game Button
+    int startGameButtonWidth = 86;
+    self.startGameButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width/2)-(startGameButtonWidth/2), self.yPosNewButton, startGameButtonWidth, startGameButtonWidth)];
+    self.startGameButton.layer.cornerRadius = self.startGameButton.bounds.size.width/2.0;
+    self.startGameButton.layer.borderWidth = 1.0;
+    self.startGameButton.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.startGameButton.titleLabel.font = [UIFont fontWithName:@"HelveticaNeue-light" size:17];
+    self.startGameButton.titleLabel.textColor = [UIColor whiteColor];
+    self.startGameButton.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    self.startGameButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self.startGameButton setTitle:@"New\nGame" forState:UIControlStateNormal];
+    [self.view addSubview:self.startGameButton];
+    [self.startGameButton   addTarget:self action:@selector(newGameButtonTappedWithSender:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.largeGameButton = [[HBFluddMenuButtonView alloc] initWithFrame:CGRectMake(0, 155, 320, 45) mainLabel:@"Large"];
-    [self.largeGameButton showAccessory:HBFluddMenuButtonAccessoryTypeChevron];
-    [self.largeGameButton showBorder:HBFluddMenuButtonBorderTypeBoth];
-    [self.largeGameButton showSublabel:@"22 x 22"];
-    
-    [self.view addSubview:self.smallGameButton];
-    [self.view addSubview:self.mediumGameButton];
-    [self.view addSubview:self.largeGameButton];
-    
-    [self.smallGameButton   addTarget:self action:@selector(newGameButtonTappedWithSender:) forControlEvents:UIControlEventTouchUpInside];
-    [self.mediumGameButton  addTarget:self action:@selector(newGameButtonTappedWithSender:) forControlEvents:UIControlEventTouchUpInside];
-    [self.largeGameButton   addTarget:self action:@selector(newGameButtonTappedWithSender:) forControlEvents:UIControlEventTouchUpInside];
-
-    // Settings title
-    self.settingsTitle = [[UILabel alloc] initWithFrame:CGRectMake(30, 230, 200, 30)];
-    self.settingsTitle.font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:25];
-    self.settingsTitle.textColor = [UIColor colorWithRed:0.388 green:0.675 blue:0.733 alpha:1];
-    self.settingsTitle.text = @"Settings";
-    [self.view addSubview:self.settingsTitle];
-    
+    // ---------------------------------
     // Settings Buttons
+    int menuButtonHeight = 45;
+    int menuButtonCount = 4;
+    self.menuButtonsContainer = [[UIView alloc] initWithFrame:CGRectMake(0, self.yPosMenuButtons, self.view.frame.size.width, menuButtonHeight * menuButtonCount)];
+    
+    // Load game modes
+    NSString *modesPath = [self modesArchivePath];
+    self.modes = [NSKeyedUnarchiver unarchiveObjectWithFile:modesPath];
+    if (!self.modes)
+    {
+        self.modes = [[HBFluddGameModes alloc] init];
+    }
+    
+    self.settingsModeButton = [[HBFluddMenuButtonView alloc] initWithFrame:CGRectMake(0, 0, 320, menuButtonHeight) mainLabel:@"Game Mode"];
+    [self.settingsModeButton showAccessory:HBFluddMenuButtonAccessoryTypeChevron];
+    [self.settingsModeButton showBorder:HBFluddMenuButtonBorderTypeTop];
+    [self.settingsModeButton showSublabel:[self.modes selectedMode].title];
+    
+    [self.menuButtonsContainer addSubview:self.settingsModeButton];
+    [self.settingsModeButton   addTarget:self action:@selector(settingsModeButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+
+    
     // - Sizes
     NSString *sizesPath = [self sizesArchivePath];
     self.sizes = [NSKeyedUnarchiver unarchiveObjectWithFile:sizesPath];
@@ -93,12 +111,12 @@
         self.sizes = [[HBFluddGameSizes alloc] init];
     }
     
-    self.settingsSizeButton = [[HBFluddMenuButtonView alloc] initWithFrame:CGRectMake(0, 270, 320, 45) mainLabel:@"Game Size"];
+    self.settingsSizeButton = [[HBFluddMenuButtonView alloc] initWithFrame:CGRectMake(0, menuButtonHeight, 320, menuButtonHeight) mainLabel:@"Difficulty"];
     [self.settingsSizeButton showAccessory:HBFluddMenuButtonAccessoryTypeChevron];
     [self.settingsSizeButton showBorder:HBFluddMenuButtonBorderTypeTop];
     [self.settingsSizeButton showSublabel:[self.sizes selectedSize].title];
     
-    [self.view addSubview:self.settingsSizeButton];
+    [self.menuButtonsContainer addSubview:self.settingsSizeButton];
     [self.settingsSizeButton   addTarget:self action:@selector(settingsSizeButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
 
     // - Colors
@@ -109,62 +127,98 @@
         self.colors = [[HBFluddColorSets alloc] init];
     }
     
-    self.settingsColorButton = [[HBFluddMenuButtonView alloc] initWithFrame:CGRectMake(0, 315, 320, 45) mainLabel:@"Colors"];
+    self.settingsColorButton = [[HBFluddMenuButtonView alloc] initWithFrame:CGRectMake(0, menuButtonHeight*2, 320, menuButtonHeight) mainLabel:@"Colors"];
     [self.settingsColorButton showAccessory:HBFluddMenuButtonAccessoryTypeChevron];
     [self.settingsColorButton showBorder:HBFluddMenuButtonBorderTypeTop];
     [self.settingsColorButton showColorSet:[self.colors selectedColorSet]];
     
-    [self.view addSubview:self.settingsColorButton];
+    [self.menuButtonsContainer addSubview:self.settingsColorButton];
     [self.settingsColorButton   addTarget:self action:@selector(settingsColorButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+
+    // - How to Play
+    self.howToPlayButton = [[HBFluddMenuButtonView alloc] initWithFrame:CGRectMake(0, menuButtonHeight*3, 320, menuButtonHeight) mainLabel:@"How to Play"];
+    [self.howToPlayButton showAccessory:HBFluddMenuButtonAccessoryTypeChevron];
+    [self.howToPlayButton showBorder:HBFluddMenuButtonBorderTypeBoth];
     
-    // Load game modes
-    ///
+    [self.menuButtonsContainer addSubview:self.howToPlayButton];
+    [self.howToPlayButton addTarget:self action:@selector(howToPlayButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    self.settingsModeButton = [[HBFluddMenuButtonView alloc] initWithFrame:CGRectMake(0, 360, 320, 45) mainLabel:@"Game Mode"];
-    [self.settingsModeButton showAccessory:HBFluddMenuButtonAccessoryTypeChevron];
-    [self.settingsModeButton showBorder:HBFluddMenuButtonBorderTypeBoth];
-    [self.settingsModeButton showSublabel:@"Normal"];
     
-    [self.view addSubview:self.settingsModeButton];
-    [self.settingsModeButton   addTarget:self action:@selector(settingsModeButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    // Add all menu items
+    [self.view addSubview:self.menuButtonsContainer];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // Set up the cell views at the bottom of the screen
+    int rows = self.cellRows;
+    int columns = 32;
+    int cellSize = self.view.frame.size.width/columns;
+
+    // Remove this if it exists to clean up all subviews
+    [self.cellViewsContainer removeFromSuperview];
     
+    self.cellViewsContainer = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - (cellSize * rows), self.view.frame.size.width, cellSize*rows)];
+    self.cellViews = [NSMutableArray arrayWithCapacity:rows];
+    
+    for (int row = 0; row < rows; row++)
+    {
+        // Set up the row array
+        NSMutableArray *columnCellViews = [NSMutableArray arrayWithCapacity:columns];
+        for (int column = 0; column < columns; column++)
+        {
+            int randomColorIndex = arc4random_uniform(6);
+            
+            HBFluddCell *currentCell = [[HBFluddCell alloc] initWithSize:cellSize
+                                                                 colorID:randomColorIndex
+                                                                   color:[self.colors colorAtIndex:randomColorIndex]];
+            HBFluddCellView *currentCellView = [[HBFluddCellView alloc] initWithFrame:CGRectMake((cellSize*column), (cellSize*row), cellSize, cellSize)
+                                                                                model:currentCell];
+            
+            int appearanceSeed = (int)arc4random_uniform(columns);
+            int probability = ((double)(row*1.5)/(double)rows * (double)columns);
+//            NSLog(@"%i %i", appearanceSeed, probability);
+            if (appearanceSeed > probability) {
+                currentCellView.alpha = 0;
+            }
+            
+            [self.cellViewsContainer addSubview:currentCellView];
+            // Add the cell into the row array
+            [columnCellViews setObject:currentCellView atIndexedSubscript:column];
+        }
+        // Add the row array into the board array
+        [self.cellViews setObject:columnCellViews atIndexedSubscript:row];
+    }
+    
+    [self.view addSubview:self.cellViewsContainer];
 }
 
 - (void)newGameButtonTappedWithSender:(HBFluddMenuButtonView *)sender
 {
-    
-    if ([sender.mainLabel.text isEqual:@"Small"])
-    {
-        NSLog(@"Small Game Tapped");
-        self.selectedGameSize = [self.sizes sizeAtIndex:0];
-    }
-    else if ([sender.mainLabel.text isEqual: @"Medium"])
-    {
-        NSLog(@"Medium Game Tapped");
-        self.selectedGameSize = [self.sizes sizeAtIndex:1];
-    }
-    else if ([sender.mainLabel.text isEqual:@"Large"])
-    {
-        NSLog(@"Large Game Tapped");
-        self.selectedGameSize = [self.sizes sizeAtIndex:2];
-    }
-    
+    self.selectedGameSize = [self.sizes selectedSize];
     [self performSegueWithIdentifier:@"newGameSegue" sender:self];
 }
 
 - (void)settingsSizeButtonTapped:(HBFluddMenuButtonView *)sender
 {
-    [self performSegueWithIdentifier:@"sizeSegue" sender:self];
+    [self performSegueWithIdentifier:@"sizesSegue" sender:self];
 }
 
 - (void)settingsColorButtonTapped:(HBFluddMenuButtonView *)sender
 {
-    [self performSegueWithIdentifier:@"colorSegue" sender:self];
+    [self performSegueWithIdentifier:@"colorsSegue" sender:self];
 }
 
 - (void)settingsModeButtonTapped:(HBFluddMenuButtonView *)sender
 {
-    [self performSegueWithIdentifier:@"modeSegue" sender:self];
+    [self performSegueWithIdentifier:@"modesSegue" sender:self];
+}
+
+- (void)howToPlayButtonTapped:(HBFluddMenuButtonView *)sender
+{
+    NSLog(@"How To play tapped");
+    [self performSegueWithIdentifier:@"howToPlaySegue" sender:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -186,17 +240,25 @@
     {
         HBFluddGameViewController *gameViewController = [segue destinationViewController];
         gameViewController.gameSize = self.selectedGameSize;
+        gameViewController.gameMode = [self.modes selectedMode];
         gameViewController.colors = self.colors;
     }
     
-    if ([segue.identifier isEqualToString:@"sizeSegue"])
+    if ([segue.identifier isEqualToString:@"modesSegue"])
+    {
+        HBFluddGameModesViewController *modesViewController = [segue destinationViewController];
+        modesViewController.modes = self.modes;
+        modesViewController.delegate = self;
+    }
+    
+    if ([segue.identifier isEqualToString:@"sizesSegue"])
     {
         HBFluddGameSizesViewController *sizesViewController = [segue destinationViewController];
         sizesViewController.sizes = self.sizes;
         sizesViewController.delegate = self;
     }
     
-    if ([segue.identifier isEqualToString:@"colorSegue"])
+    if ([segue.identifier isEqualToString:@"colorsSegue"])
     {
         HBFluddColorSetsViewController *colorsViewController = [segue destinationViewController];
         colorsViewController.colors = self.colors;
@@ -216,6 +278,16 @@
     [self.view setNeedsDisplay];
 }
 
+- (void)didSelectGameMode:(int)index
+{
+    NSLog(@"[HBFluddMenuViewController didSelectGameMode:]");
+    [self.modes setMode:index];
+    [self saveModes];
+    [self.navigationController popViewControllerAnimated:YES];
+    [self.settingsModeButton showSublabel:[self.modes selectedMode].title];
+    [self.view setNeedsDisplay];
+}
+
 - (void)didSelectGameSize:(int)index
 {
     NSLog(@"[HBFluddMenuViewController didSelectGameSize:]");
@@ -227,6 +299,19 @@
 }
 
 #pragma mark - Archiving and Unarchiving
+
+- (NSString *)modesArchivePath
+{
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories objectAtIndex:0];
+    return [documentDirectory stringByAppendingPathComponent:@"modes.archive"];
+}
+
+- (BOOL)saveModes
+{
+    NSString *path = [self modesArchivePath];
+    return [NSKeyedArchiver archiveRootObject:self.modes toFile:path];
+}
 
 - (NSString *)sizesArchivePath
 {

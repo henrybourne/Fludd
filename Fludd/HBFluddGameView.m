@@ -22,6 +22,41 @@
         int totalSize = self.model.cellSize * self.model.numberOfCells;
         int offset = (self.frame.size.width - totalSize)/2;
         
+        // Set bounds to clip background
+        self.bounds = CGRectMake(offset, offset, totalSize, totalSize);
+        self.clipsToBounds = YES;
+        
+        // Add wall image if necessary, and set up parallax effect
+        if (self.model.gameMode.type == HBFluddGameModeTypeWalls)
+        {
+            self.wallBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(self.frame.origin.x-10, self.frame.origin.y-10, self.frame.size.width+20, self.frame.size.height+20)];
+            self.wallBackgroundView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"WallFill"]];
+            [self addSubview:self.wallBackgroundView];
+
+            // Set vertical effect
+            UIInterpolatingMotionEffect *verticalMotionEffect =
+            [[UIInterpolatingMotionEffect alloc]
+             initWithKeyPath:@"center.y"
+             type:UIInterpolatingMotionEffectTypeTiltAlongVerticalAxis];
+            verticalMotionEffect.minimumRelativeValue = @(-10);
+            verticalMotionEffect.maximumRelativeValue = @(10);
+            
+            // Set horizontal effect
+            UIInterpolatingMotionEffect *horizontalMotionEffect =
+            [[UIInterpolatingMotionEffect alloc]
+             initWithKeyPath:@"center.x"
+             type:UIInterpolatingMotionEffectTypeTiltAlongHorizontalAxis];
+            horizontalMotionEffect.minimumRelativeValue = @(-10);
+            horizontalMotionEffect.maximumRelativeValue = @(10);
+            
+            // Create group to combine both
+            UIMotionEffectGroup *group = [UIMotionEffectGroup new];
+            group.motionEffects = @[horizontalMotionEffect, verticalMotionEffect];
+            
+            // Add both effects to your view
+            [self.wallBackgroundView addMotionEffect:group];
+        }
+        
         // Set up the individual cell views
         self.cellViews = [NSMutableArray arrayWithCapacity:self.model.numberOfCells];
         for (int row = 0; row < self.model.numberOfCells; row++)
@@ -42,6 +77,7 @@
             [self.cellViews setObject:currentRow atIndexedSubscript:row];
         }
     }
+    
     return self;
 }
 

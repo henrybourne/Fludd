@@ -12,8 +12,14 @@
 
 @property int numberOfCells;
 @property int movesAllowed;
+@property int numberOfWalls;
+@property int timeAllowed;
 @property NSString *title;
 
-- (id)initWithNumberOfCells:(int)numberOfCells movesAllowed:(int)movesAllowed;
+- (id)initWithNumberOfCells:(int)numberOfCells
+               movesAllowed:(int)movesAllowed
+              numberOfWalls:(int)numberOfWalls
+                timeAllowed:(int)timeAllowed
+                      title:(NSString *)title;
 
 @end

@@ -44,6 +44,16 @@
 		BA8CEDEA193427CF0024C51C /* HBFluddGameSizes.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEDE9193427CF0024C51C /* HBFluddGameSizes.m */; };
 		BA8CEDED193427FF0024C51C /* HBFluddGameSize.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEDEC193427FF0024C51C /* HBFluddGameSize.m */; };
 		BA8CEDF019342AED0024C51C /* HBFluddGameSizesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEDEF19342AED0024C51C /* HBFluddGameSizesViewController.m */; };
+		BA8CEDF3193675BB0024C51C /* HBFluddGameModesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEDF2193675BB0024C51C /* HBFluddGameModesViewController.m */; };
+		BA8CEDF6193678D50024C51C /* HBFluddGameMode.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8CEDF5193678D50024C51C /* HBFluddGameMode.m */; };
+		BA9F7E3C19409DEE001CCD89 /* WallFill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9F7E3B19409DEE001CCD89 /* WallFill@2x.png */; };
+		BA9FD12A1983E8BD00981A01 /* HBFluddHowToPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9FD1291983E8BD00981A01 /* HBFluddHowToPlayViewController.m */; };
+		BA9FD12D1983ED1500981A01 /* HBFluddHowToPlayContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9FD12C1983ED1500981A01 /* HBFluddHowToPlayContentViewController.m */; };
+		BA9FD13319841B7B00981A01 /* BoardImage1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9FD12E19841B7B00981A01 /* BoardImage1@2x.png */; };
+		BA9FD13419841B7B00981A01 /* BoardImage2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9FD12F19841B7B00981A01 /* BoardImage2@2x.png */; };
+		BA9FD13519841B7B00981A01 /* BoardImage3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9FD13019841B7B00981A01 /* BoardImage3@2x.png */; };
+		BA9FD13619841B7B00981A01 /* BoardImage4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9FD13119841B7B00981A01 /* BoardImage4@2x.png */; };
+		BA9FD13719841B7B00981A01 /* BoardImage5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9FD13219841B7B00981A01 /* BoardImage5@2x.png */; };
 		BAA912D1191A0D0000E850BE /* HBFluddColorSetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA912D0191A0D0000E850BE /* HBFluddColorSetsViewController.m */; };
 		BAA912D4191A53BE00E850BE /* HBFluddColorSet.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA912D3191A53BE00E850BE /* HBFluddColorSet.m */; };
 		BAC4CCA11905B5AB0088890E /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC4CC9D1905B5AB0088890E /* plus@2x.png */; };
@@ -125,6 +135,20 @@
 		BA8CEDEC193427FF0024C51C /* HBFluddGameSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddGameSize.m; sourceTree = "<group>"; };
 		BA8CEDEE19342AED0024C51C /* HBFluddGameSizesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddGameSizesViewController.h; sourceTree = "<group>"; };
 		BA8CEDEF19342AED0024C51C /* HBFluddGameSizesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddGameSizesViewController.m; sourceTree = "<group>"; };
+		BA8CEDF1193675BB0024C51C /* HBFluddGameModesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddGameModesViewController.h; sourceTree = "<group>"; };
+		BA8CEDF2193675BB0024C51C /* HBFluddGameModesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddGameModesViewController.m; sourceTree = "<group>"; };
+		BA8CEDF4193678D50024C51C /* HBFluddGameMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddGameMode.h; sourceTree = "<group>"; };
+		BA8CEDF5193678D50024C51C /* HBFluddGameMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddGameMode.m; sourceTree = "<group>"; };
+		BA9F7E3B19409DEE001CCD89 /* WallFill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WallFill@2x.png"; sourceTree = "<group>"; };
+		BA9FD1281983E8BD00981A01 /* HBFluddHowToPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddHowToPlayViewController.h; sourceTree = "<group>"; };
+		BA9FD1291983E8BD00981A01 /* HBFluddHowToPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddHowToPlayViewController.m; sourceTree = "<group>"; };
+		BA9FD12B1983ED1500981A01 /* HBFluddHowToPlayContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddHowToPlayContentViewController.h; sourceTree = "<group>"; };
+		BA9FD12C1983ED1500981A01 /* HBFluddHowToPlayContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddHowToPlayContentViewController.m; sourceTree = "<group>"; };
+		BA9FD12E19841B7B00981A01 /* BoardImage1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoardImage1@2x.png"; sourceTree = "<group>"; };
+		BA9FD12F19841B7B00981A01 /* BoardImage2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoardImage2@2x.png"; sourceTree = "<group>"; };
+		BA9FD13019841B7B00981A01 /* BoardImage3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoardImage3@2x.png"; sourceTree = "<group>"; };
+		BA9FD13119841B7B00981A01 /* BoardImage4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoardImage4@2x.png"; sourceTree = "<group>"; };
+		BA9FD13219841B7B00981A01 /* BoardImage5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BoardImage5@2x.png"; sourceTree = "<group>"; };
 		BAA912CF191A0D0000E850BE /* HBFluddColorSetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddColorSetsViewController.h; sourceTree = "<group>"; };
 		BAA912D0191A0D0000E850BE /* HBFluddColorSetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBFluddColorSetsViewController.m; sourceTree = "<group>"; };
 		BAA912D2191A53BE00E850BE /* HBFluddColorSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBFluddColorSet.h; sourceTree = "<group>"; };
@@ -186,6 +210,8 @@
 				BA8CEDEC193427FF0024C51C /* HBFluddGameSize.m */,
 				BA8CEDE8193427CF0024C51C /* HBFluddGameSizes.h */,
 				BA8CEDE9193427CF0024C51C /* HBFluddGameSizes.m */,
+				BA8CEDF4193678D50024C51C /* HBFluddGameMode.h */,
+				BA8CEDF5193678D50024C51C /* HBFluddGameMode.m */,
 				BA8CEDE51933CBEE0024C51C /* HBFluddGameModes.h */,
 				BA8CEDE61933CBEE0024C51C /* HBFluddGameModes.m */,
 				BA1FBC8618FECF52008EBF0E /* HBFluddGameView.h */,
@@ -207,6 +233,12 @@
 		BA0F3B3219092CAD00E4C8C2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BA9FD12E19841B7B00981A01 /* BoardImage1@2x.png */,
+				BA9FD12F19841B7B00981A01 /* BoardImage2@2x.png */,
+				BA9FD13019841B7B00981A01 /* BoardImage3@2x.png */,
+				BA9FD13119841B7B00981A01 /* BoardImage4@2x.png */,
+				BA9FD13219841B7B00981A01 /* BoardImage5@2x.png */,
+				BA9F7E3B19409DEE001CCD89 /* WallFill@2x.png */,
 				BA02B05D191BDFB300A0ED32 /* Check@2x.png */,
 				BA1E97731916342100DDB637 /* Chevron@2x.png */,
 				BAEFF2B71918BEFB0087B0CE /* Icon-60@2x.png */,
@@ -254,21 +286,27 @@
 		BA1FBC4E18FEC5CA008EBF0E /* Fludd */ = {
 			isa = PBXGroup;
 			children = (
+				BA1FBC5A18FEC5CA008EBF0E /* Fludd.storyboard */,
+				BA0F3B3119092C8C00E4C8C2 /* Game */,
 				BA1FBC5718FEC5CA008EBF0E /* HBAppDelegate.h */,
 				BA1FBC5818FEC5CA008EBF0E /* HBAppDelegate.m */,
-				BA1FBC5A18FEC5CA008EBF0E /* Fludd.storyboard */,
-				BA1FBC5D18FEC5CA008EBF0E /* HBFluddGameViewController.h */,
-				BA1FBC5E18FEC5CA008EBF0E /* HBFluddGameViewController.m */,
-				BA1E97631914318700DDB637 /* HBFluddMenuViewController.h */,
-				BA1E97641914318700DDB637 /* HBFluddMenuViewController.m */,
 				BAA912CF191A0D0000E850BE /* HBFluddColorSetsViewController.h */,
 				BAA912D0191A0D0000E850BE /* HBFluddColorSetsViewController.m */,
+				BA8CEDF1193675BB0024C51C /* HBFluddGameModesViewController.h */,
+				BA8CEDF2193675BB0024C51C /* HBFluddGameModesViewController.m */,
 				BA8CEDEE19342AED0024C51C /* HBFluddGameSizesViewController.h */,
 				BA8CEDEF19342AED0024C51C /* HBFluddGameSizesViewController.m */,
-				BA0F3B3119092C8C00E4C8C2 /* Game */,
-				BAEFF2BD19196DEF0087B0CE /* Menu */,
-				BA1FBC6018FEC5CA008EBF0E /* Images.xcassets */,
+				BA1FBC5D18FEC5CA008EBF0E /* HBFluddGameViewController.h */,
+				BA1FBC5E18FEC5CA008EBF0E /* HBFluddGameViewController.m */,
+				BA9FD12B1983ED1500981A01 /* HBFluddHowToPlayContentViewController.h */,
+				BA9FD12C1983ED1500981A01 /* HBFluddHowToPlayContentViewController.m */,
+				BA9FD1281983E8BD00981A01 /* HBFluddHowToPlayViewController.h */,
+				BA9FD1291983E8BD00981A01 /* HBFluddHowToPlayViewController.m */,
+				BA1E97631914318700DDB637 /* HBFluddMenuViewController.h */,
+				BA1E97641914318700DDB637 /* HBFluddMenuViewController.m */,
 				BA0F3B3219092CAD00E4C8C2 /* Images */,
+				BA1FBC6018FEC5CA008EBF0E /* Images.xcassets */,
+				BAEFF2BD19196DEF0087B0CE /* Menu */,
 				BA1FBC4F18FEC5CA008EBF0E /* Supporting Files */,
 			);
 			path = Fludd;
@@ -395,18 +433,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA9FD13419841B7B00981A01 /* BoardImage2@2x.png in Resources */,
 				BA1FBC6118FEC5CA008EBF0E /* Images.xcassets in Resources */,
 				BAC4CCA31905B5AB0088890E /* settings@2x.png in Resources */,
 				BAC4CCA11905B5AB0088890E /* plus@2x.png in Resources */,
+				BA9F7E3C19409DEE001CCD89 /* WallFill@2x.png in Resources */,
 				BA1FBC5318FEC5CA008EBF0E /* InfoPlist.strings in Resources */,
 				BA7B6AD51916C8C500F81323 /* HBFluddGameLostView.xib in Resources */,
 				BA02B05E191BDFB300A0ED32 /* Check@2x.png in Resources */,
 				BA7B6AD71916CA5600F81323 /* LostGameDialog@2x.png in Resources */,
 				BA1E975A1913C30300DDB637 /* HBFluddGameWonView.xib in Resources */,
+				BA9FD13619841B7B00981A01 /* BoardImage4@2x.png in Resources */,
+				BA9FD13719841B7B00981A01 /* BoardImage5@2x.png in Resources */,
 				BA1E97781916B90100DDB637 /* WellDoneDialog@2x.png in Resources */,
 				BA1E977A1916B9A900DDB637 /* PlayAgainButton@2x.png in Resources */,
 				BA1FBC5C18FEC5CA008EBF0E /* Fludd.storyboard in Resources */,
+				BA9FD13519841B7B00981A01 /* BoardImage3@2x.png in Resources */,
 				BAEFF2BB1918BEFB0087B0CE /* Icon-Small-40@2x.png in Resources */,
+				BA9FD13319841B7B00981A01 /* BoardImage1@2x.png in Resources */,
 				BA1E97741916342100DDB637 /* Chevron@2x.png in Resources */,
 				BAEFF2BA1918BEFB0087B0CE /* Icon-60@2x.png in Resources */,
 				BAEFF2BC1918BEFB0087B0CE /* Icon-Small@2x.png in Resources */,
@@ -436,7 +480,11 @@
 				BA1FBC7F18FEC859008EBF0E /* HBFluddCellView.m in Sources */,
 				BA1FBC8818FECF52008EBF0E /* HBFluddGameView.m in Sources */,
 				BA1FBC5F18FEC5CA008EBF0E /* HBFluddGameViewController.m in Sources */,
+				BA8CEDF6193678D50024C51C /* HBFluddGameMode.m in Sources */,
 				BA0F3B291907981A00E4C8C2 /* HBFluddColorButton.m in Sources */,
+				BA9FD12A1983E8BD00981A01 /* HBFluddHowToPlayViewController.m in Sources */,
+				BA9FD12D1983ED1500981A01 /* HBFluddHowToPlayContentViewController.m in Sources */,
+				BA8CEDF3193675BB0024C51C /* HBFluddGameModesViewController.m in Sources */,
 				BA0F3B3019092C6F00E4C8C2 /* HBFluddMovesRemainingView.m in Sources */,
 				BA8CEDF019342AED0024C51C /* HBFluddGameSizesViewController.m in Sources */,
 				BA8CEDEA193427CF0024C51C /* HBFluddGameSizes.m in Sources */,
@@ -582,7 +630,7 @@
 				GCC_PREFIX_HEADER = "Fludd/Fludd-Prefix.pch";
 				INFOPLIST_FILE = "Fludd/Fludd-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6D68001E-AF19-460A-9D2B-5B8505E6877A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -598,7 +646,7 @@
 				GCC_PREFIX_HEADER = "Fludd/Fludd-Prefix.pch";
 				INFOPLIST_FILE = "Fludd/Fludd-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6D68001E-AF19-460A-9D2B-5B8505E6877A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

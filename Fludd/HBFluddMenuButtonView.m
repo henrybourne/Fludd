@@ -8,7 +8,6 @@
 
 #import "HBFluddMenuButtonView.h"
 
-
 @implementation HBFluddMenuButtonView
 
 - (id)initWithFrame:(CGRect)frame mainLabel:(NSString *)mainLabel
@@ -96,10 +95,12 @@
     }
     
     // Sub title
-    self.subLabel = [[UILabel alloc] initWithFrame:CGRectMake(220, self.frame.origin.y, self.frame.size.width-30, self.frame.size.height)];
+    self.subLabel = [[UILabel alloc] initWithFrame:CGRectMake(150, self.frame.origin.y, self.frame.size.width-200, self.frame.size.height)];
     self.subLabel.center = CGPointMake(self.subLabel.center.x, self.frame.size.height/2.0);
-    self.subLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:15];
+    self.subLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
     self.subLabel.textColor = [UIColor colorWithRed:0.600 green:0.600 blue:0.600 alpha:1];
+    self.subLabel.textAlignment = NSTextAlignmentRight;
+    //self.subLabel.backgroundColor= [UIColor grayColor];
     self.subLabel.text = sublabel;
     [self addSubview:self.subLabel];
 }

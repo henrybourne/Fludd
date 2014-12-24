@@ -10,6 +10,7 @@
 #import "HBFluddColorSets.h"
 #import "HBFluddCell.h"
 #import "HBFluddGameSize.h"
+#import "HBFluddGameModes.h"
 
 static const int kNumberOfColors = 6;
 static const int kHBFluddBoardSizeInPoints = 300;
@@ -27,12 +28,13 @@ typedef enum {
 @property int cellSize;
 @property NSMutableArray *cells;
 @property HBFluddColorSets *colors;
+@property HBFluddGameMode *gameMode;
 @property int movesAllowed;
 @property int movesRemaining;
 @property BOOL isFirstMove;
 
-- (id)initWithGameSize:(HBFluddGameSize *)gameSize colors:(HBFluddColorSets *)colors;
-- (void)newGameWithGameSize:(HBFluddGameSize *)gameSize colors:(HBFluddColorSets *)colors;
+- (id)initWithGameMode:(HBFluddGameMode *)mode size:(HBFluddGameSize *)gameSize colors:(HBFluddColorSets *)colors;
+- (void)newGameWithGameMode:(HBFluddGameMode *)mode size:(HBFluddGameSize *)gameSize colors:(HBFluddColorSets *)colors;
 - (void)restartGameWithSameBoard;
 - (BOOL)isGameWon;
 - (BOOL)isGameLost;

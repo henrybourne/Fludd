@@ -16,9 +16,9 @@
     if (self)
     {
         self.sizes = [NSMutableArray array];
-        [self.sizes addObject:[[HBFluddGameSize alloc] initWithNumberOfCells:12 movesAllowed:22]];
-        [self.sizes addObject:[[HBFluddGameSize alloc] initWithNumberOfCells:17 movesAllowed:30]];
-        [self.sizes addObject:[[HBFluddGameSize alloc] initWithNumberOfCells:22 movesAllowed:36]];
+        [self.sizes addObject:[[HBFluddGameSize alloc] initWithNumberOfCells:12 movesAllowed:22 numberOfWalls:14 timeAllowed:30 title:@"Easy"]];
+        [self.sizes addObject:[[HBFluddGameSize alloc] initWithNumberOfCells:17 movesAllowed:30 numberOfWalls:21 timeAllowed:45 title:@"Medium"]];
+        [self.sizes addObject:[[HBFluddGameSize alloc] initWithNumberOfCells:22 movesAllowed:36 numberOfWalls:26 timeAllowed:90 title:@"Hard"]];
         self.selectedIndex = 0;
     }
     return self;
