@@ -18,7 +18,7 @@ typedef NS_ENUM(NSInteger, HBFluddGameModeTypes) {
 
 @property HBFluddGameModeTypes type;
 @property NSString *title;
-@property NSString *description;
+@property NSString *desc;
 
 - (id)initWithType:(HBFluddGameModeTypes)type title:(NSString *)title description:(NSString *)description;
 

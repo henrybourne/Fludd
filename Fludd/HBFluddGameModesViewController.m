@@ -28,7 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor colorWithRed:0.204 green:0.204 blue:0.204 alpha:1];
-    self.navigationItem.title = @"Difficulty";
+    self.navigationItem.title = @"Game Mode";
     
     self.modeButtons = [NSMutableArray array];
     

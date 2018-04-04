@@ -10,14 +10,14 @@
 
 @implementation HBFluddGameMode
 
-- (id)initWithType:(HBFluddGameModeTypes)type title:(NSString *)title description:(NSString *)description
+- (id)initWithType:(HBFluddGameModeTypes)type title:(NSString *)title description:(NSString *)desc
 {
     self = [super init];
     if (self)
     {
         self.type = type;
         self.title = title;
-        self.description = description;
+        self.desc = desc;
     }
     return self;
 }
